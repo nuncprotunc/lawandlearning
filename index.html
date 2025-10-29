@@ -96,6 +96,13 @@
       align-items: center;
     }
     
+    /* Sticky nav like GlassCase */
+    header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(15,20,33,0.85); -webkit-backdrop-filter: saturate(130%) blur(10px); backdrop-filter: saturate(130%) blur(10px); border-bottom: 1px solid var(--hairline); }
+    .site-nav .nav-inner { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand .wordmark { font-family: 'Spectral', serif; font-style: italic; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); font-size: 1.25rem; }
+    .pill { background: linear-gradient(135deg, var(--violet), var(--azure)); color: #0B0E1A; padding: 6px 12px; border-radius: 999px; font-weight: 800; font-size: 0.78rem; border: 1px solid rgba(201,192,255,.6); white-space: nowrap; }
+  
     /* Living Systems Arc animations */
     @keyframes drawArc {
       from { stroke-dashoffset: 1; }
@@ -336,6 +343,14 @@
   </style>
 </head>
 <body>
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="wordmark">Law &amp; Learning</div>
+      </div>
+      <div class="pill" aria-label="Site tagline">Making Law Learnable</div>
+    </div>
+  </header>
   <main class="wrap" role="main">
     <!-- Living Systems Arc Logo -->
     <svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="overflow: visible; max-width: 100%; margin: 0 auto;" role="img" aria-label="Law and Learning logo with connected circles representing evidence, policy and learning">
