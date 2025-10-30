@@ -88,7 +88,8 @@
     /* Header (surgical edits) */
     header.site-nav {
       position: sticky; top: 0; z-index: 100;
-      height: var(--header-h);
+      height: auto;
+      padding-block: 14px;
       background: rgba(15,20,33,0.85);
       -webkit-backdrop-filter: saturate(130%) blur(10px);
       backdrop-filter: saturate(130%) blur(10px);
@@ -97,10 +98,10 @@
       display: flex; align-items: center; justify-content: center;
     }
     .site-nav .nav-inner {
-      width: 100%; max-width: 1120px; height: 100%;
-      padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      overflow: hidden;
+      width: 100%; max-width: none;
+      padding-inline: clamp(12px, 3vw, 32px);
+      display: flex; align-items: center; justify-content: space-between; gap: clamp(8px, 1.2vw, 12px);
+      overflow: hidden; flex-wrap: wrap;
     }
     .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
     .brand svg { width: 28px; height: 28px; display: block; }
@@ -283,7 +284,6 @@
         <a href="https://linkedin.com/company/lawandlearning" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <span class="divider" aria-hidden="true">·</span>
         <a href="https://github.com/nuncprotunc" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <span class="divider" aria-hidden="true">·</span>
       </p>
       <p class="footer-text">Jay Spudvilas (also published as Jayden Spudvilas-Powell).</p>
       <p class="footer-text">Founder of GlassCase.org and Law &amp; Learning.</p>
