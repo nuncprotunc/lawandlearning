@@ -197,9 +197,20 @@
       transform-origin: center;
     }
 
+    /* Subtle blue circle throb */
+    @keyframes blueThrob {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+    .living-glow {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: blueThrob 3s ease-in-out infinite;
+    }
+
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce) {
-      .arc-animated, .heartbeat-pulse { animation: none; }
+      .arc-animated, .heartbeat-pulse, .living-glow { animation: none; }
     }
   </style>
 </head>
