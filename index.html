@@ -187,7 +187,14 @@
       50% { opacity: 0.8; transform: scale(1.25); }
     }
     .heartbeat-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
       animation: heartbeat 2.5s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    .heartbeat-ring {
+      transform-box: fill-box;
+      transform-origin: center;
     }
 
     /* Reduce motion */
