@@ -13,7 +13,7 @@
   <link rel="me" href="https://glasscase.org/">
   <link rel="me" href="https://github.com/nuncprotunc">
   
-  <title>Law & Learning – Designing systems where evidence drives practice</title>
+  <title>Law & Learning — Making Law Learnable</title>
   <link rel="canonical" href="https://lawandlearning.com/">
   <meta name="theme-color" content="#1A1F2E">
   <meta name="color-scheme" content="dark">
@@ -25,7 +25,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lawandlearning.com/">
-  <meta property="og:title" content="Law & Learning – Designing systems where evidence drives practice">
+  <meta property="og:title" content="Law & Learning — Making Law Learnable">
   <meta property="og:description" content="Independent research initiative by Jay Spudvilas (Jayden Spudvilas-Powell) applying cognitive science to legal education, glasscase.org transparency systems, and governance frameworks.">
   <meta property="og:site_name" content="Law & Learning">
   <meta property="og:locale" content="en_AU">
@@ -37,7 +37,7 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://lawandlearning.com/">
-  <meta property="twitter:title" content="Law & Learning – Designing systems where evidence drives practice">
+  <meta property="twitter:title" content="Law & Learning — Making Law Learnable">
   <meta property="twitter:description" content="Independent research initiative applying cognitive science to legal education and governance frameworks.">
   <meta property="twitter:image" content="https://lawandlearning.com/og-image.png">
   <meta name="twitter:image:alt" content="Law & Learning orbit mark with purple, blue and gold nodes">
@@ -97,18 +97,18 @@
     }
     
     /* Sticky nav like GlassCase */
-    header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(15,20,33,0.85); -webkit-backdrop-filter: saturate(130%) blur(10px); backdrop-filter: saturate(130%) blur(10px); border-bottom: 1px solid var(--hairline); }
-    .site-nav .nav-inner { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .brand { display: flex; align-items: center; gap: 12px; }
+    header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(15,20,33,0.85); -webkit-backdrop-filter: saturate(130%) blur(10px); backdrop-filter: saturate(130%) blur(10px); border-bottom: 1px solid var(--hairline); min-height: 64px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .site-nav .nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; flex: 1 1 auto; min-width: 0; }
     .brand .wordmark { 
       font-family: 'Spectral', serif; 
       font-style: italic; 
       font-weight: 700; 
-      letter-spacing: 0.02em; 
-      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+      font-size: 20px;
       display: inline-flex;
       align-items: center;
-      gap: 0.35em;
+      gap: 0.15em;
     }
     
     .brand .wordmark .law {
@@ -147,9 +147,47 @@
       border: 1px solid rgba(147, 51, 234, 0.6); 
       box-shadow: 0 0 12px rgba(107, 33, 168, 0.28);
       white-space: nowrap; 
-      text-decoration: none; 
+      text-decoration: none;
+      max-width: 100%;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill > span {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pill .pill-link,
+    .pill .pill-link:link,
+    .pill .pill-link:visited,
+    .pill .pill-link:hover,
+    .pill .pill-link:focus,
+    .pill .pill-link:active {
+      color: inherit !important;
+      text-decoration: none !important;
+      border-bottom: 0 !important;
+      outline: none;
     }
     a.pill, a.pill:link, a.pill:visited, a.pill:hover, a.pill:focus, a.pill:active { text-decoration: none !important; border-bottom: 0 !important; outline: none; }
+  
+    /* Mobile responsive pill */
+    @media (max-width: 640px) {
+      .site-nav .nav-inner { gap: 8px; padding: 10px 12px; }
+      .pill {
+        padding: 6px 10px;
+        font-size: 13px;
+        max-width: 60vw;
+      }
+      .pill-short { display: inline !important; }
+      .pill-long { display: none !important; }
+      .brand .wordmark { font-size: clamp(18px, 5vw, 20px); }
+    }
+    @media (min-width: 641px) {
+      .pill-short { display: none !important; }
+      .pill-long { display: inline !important; }
+    }
   
     /* Living Systems Arc animations */
     @keyframes drawArc {
@@ -209,17 +247,19 @@
       font-family: 'Spectral', ui-serif;
       font-style: italic;
       font-weight: 600;
-      font-size: 3rem;
+      font-size: clamp(28px, 6vw, 3rem);
       letter-spacing: .5px;
       margin: 8px 0 6px;
       color: #D9F0FF;
+      overflow-wrap: anywhere;
     }
     
     p {
       line-height: 1.6;
       margin: 0 0 var(--s2);
       color: var(--muted);
-      font-size: 1rem;
+      font-size: clamp(16px, 3.8vw, 1rem);
+      max-width: 75ch;
     }
     
     .lead-italic {
@@ -406,7 +446,10 @@
         </svg>
         <div class="wordmark"><span class="law">Law</span><span class="divider">&amp;</span><span class="learning">Learning</span></div>
       </div>
-      <span class="pill" aria-label="Making Law Learnable on lawandlearning.com">Making Law Learnable • lawandlearning.com</span>
+      <span class="pill" aria-label="Making Law Learnable">
+        <span class="pill-short">Making Law Learnable</span>
+        <span class="pill-long">Making Law Learnable • <a class="pill-link" href="https://lawandlearning.com">lawandlearning.com</a></span>
+      </span>
     </div>
   </header>
   <main class="wrap" role="main">
@@ -490,8 +533,6 @@
 
     <footer>
       <p class="footer-text">
-        <a href="/">Law &amp; Learning</a>
-        <span class="divider" aria-hidden="true">·</span>
         <a href="https://glasscase.org" target="_blank" rel="noopener noreferrer">GlassCase.org</a>
         <span class="divider" aria-hidden="true">·</span>
         <a href="https://linkedin.com/company/lawandlearning" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -500,7 +541,7 @@
         <span class="divider" aria-hidden="true">·</span>
       </p>
 
-      <p class="footer-text">Jay Spudvilas (also published as Jayden Spudvilas‑Powell / Spudvilas). Founder of GlassCase.org and Law &amp; Learning.</p>
+      <p class="footer-text">Jay Spudvilas (also published as Jayden Spudvilas-Powell). Founder of GlassCase.org and Law &amp; Learning.</p>
 
       <p class="footer-text footer-text--sm">ABN: 85&nbsp;293&nbsp;071&nbsp;070</p>
     </footer>
