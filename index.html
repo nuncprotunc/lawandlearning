@@ -96,98 +96,88 @@
       align-items: center;
     }
     
-    /* Sticky nav like GlassCase */
-    header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(15,20,33,0.85); -webkit-backdrop-filter: saturate(130%) blur(10px); backdrop-filter: saturate(130%) blur(10px); border-bottom: 1px solid var(--hairline); min-height: 64px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-    .site-nav .nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .brand { display: flex; align-items: center; gap: 12px; flex: 1 1 auto; min-width: 0; }
-    .brand .wordmark { 
-      font-family: 'Spectral', serif; 
-      font-style: italic; 
-      font-weight: 700; 
-      letter-spacing: 0.02em;
-      font-size: 20px;
-      display: inline-flex;
+    /* Site header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
       align-items: center;
-      gap: 0.15em;
+      justify-content: space-between;
+      gap: clamp(8px, 1.6vw, 18px);
+      padding-block: 14px;
+      padding-inline: clamp(12px, 3vw, 32px);
+      background: rgba(15,20,33,0.85);
+      border-bottom: 1px solid var(--hairline);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      -webkit-backdrop-filter: saturate(130%) blur(10px);
+      backdrop-filter: saturate(130%) blur(10px);
+      flex-wrap: wrap;
     }
-    
-    .brand .wordmark .law {
-      color: #D9F0FF;
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: clamp(6px, 1.2vw, 14px);
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .site-header .brand .logo {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 5px 14px;
-      border-radius: 10px;
       background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      padding: 5px 12px;
+      border-radius: 10px;
       border: 1px solid rgba(147, 51, 234, 0.6);
       box-shadow: 0 4px 16px rgba(107, 33, 168, 0.35);
-      font-weight: 800;
     }
-    
-    .brand .wordmark .divider {
+    .site-header .brand .logo svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+    .site-header .brand .title {
+      margin: 0;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      white-space: nowrap;
       color: #D9F0FF;
-      font-weight: 400;
-      margin: 0 0.25em;
-      display: inline-flex;
-      font-size: 1.1em;
     }
-    
-    .brand .wordmark .learning {
-      color: #D9F0FF;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-    }
-    .pill { 
-      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
-      color: #FFFFFF; 
-      padding: 6px 12px; 
-      border-radius: 999px; 
-      font-weight: 800; 
-      font-size: 0.78rem; 
-      border: 1px solid rgba(147, 51, 234, 0.6); 
-      box-shadow: 0 0 12px rgba(107, 33, 168, 0.28);
-      white-space: nowrap; 
-      text-decoration: none;
-      max-width: 100%;
-      line-height: 1;
+    .site-header .title .divider { margin: 0 0.2em; font-weight: 400; }
+    .site-header .tag-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-    }
-    .pill > span {
-      display: inline-block;
+      justify-content: center;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      line-height: 1;
+      font-weight: 600;
+      font-size: clamp(12px, 1.7vw, 14px);
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      max-width: 44vw;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      border: 1px solid rgba(147, 51, 234, 0.6);
+      box-shadow: 0 0 12px rgba(107, 33, 168, 0.28);
     }
-    .pill .pill-link,
-    .pill .pill-link:link,
-    .pill .pill-link:visited,
-    .pill .pill-link:hover,
-    .pill .pill-link:focus,
-    .pill .pill-link:active {
-      color: inherit !important;
-      text-decoration: none !important;
-      border-bottom: 0 !important;
-      outline: none;
+    .site-header .tag-pill:hover,
+    .site-header .tag-pill:focus {
+      text-decoration: none;
+      color: #FFFFFF;
     }
-    a.pill, a.pill:link, a.pill:visited, a.pill:hover, a.pill:focus, a.pill:active { text-decoration: none !important; border-bottom: 0 !important; outline: none; }
-  
-    /* Mobile responsive pill */
-    @media (max-width: 640px) {
-      .site-nav .nav-inner { gap: 8px; padding: 10px 12px; }
-      .pill {
-        padding: 6px 10px;
-        font-size: 13px;
-        max-width: 60vw;
-      }
-      .pill-short { display: inline !important; }
-      .pill-long { display: none !important; }
-      .brand .wordmark { font-size: clamp(18px, 5vw, 20px); }
+    
+    @media (max-width: 480px) {
+      .site-header { gap: 10px; }
+      .site-header .brand { gap: 8px; }
+      .site-header .tag-pill { max-width: 48vw; }
     }
-    @media (min-width: 641px) {
-      .pill-short { display: none !important; }
-      .pill-long { display: inline !important; }
-    }
+    body#ll .site-header .brand { gap: 12px; }
   
     /* Living Systems Arc animations */
     @keyframes drawArc {
@@ -432,11 +422,10 @@
     }
   </style>
 </head>
-<body>
-  <header class="site-nav" role="banner">
-    <div class="nav-inner">
-      <div class="brand">
-        <!-- Compact 3-circle logo -->
+<body id="ll">
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <a class="logo" href="/" aria-label="Law &amp; Learning home">
         <svg width="32" height="32" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="15" cy="40" r="8" fill="#6B21A8"/>
           <circle cx="40" cy="40" r="8" fill="#4A90E2"/>
@@ -444,13 +433,10 @@
           <line x1="23" y1="40" x2="32" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
           <line x1="48" y1="40" x2="57" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
         </svg>
-        <div class="wordmark"><span class="law">Law</span><span class="divider">&amp;</span><span class="learning">Learning</span></div>
-      </div>
-      <span class="pill" aria-label="Making Law Learnable">
-        <span class="pill-short">Making Law Learnable</span>
-        <span class="pill-long">Making Law Learnable • <a class="pill-link" href="https://lawandlearning.com">lawandlearning.com</a></span>
-      </span>
+      </a>
+      <span class="title"><span class="title-law">Law</span><span class="title-divider">&amp;</span><span class="title-learning">Learning</span></span>
     </div>
+    <a class="tag-pill" href="https://lawandlearning.com" aria-label="Visit lawandlearning.com">Making Law Learnable •lawandlearning.com</a>
   </header>
   <main class="wrap" role="main">
     <!-- Living Systems Arc Logo -->
