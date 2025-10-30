@@ -172,6 +172,24 @@
     .footer-text:first-of-type { margin-top: 0; }
     .footer-text--sm { font-size: 0.75rem; letter-spacing: 0.08em; opacity: 0.7; margin-top: 0.75rem; }
 
+    /* Arc animation */
+    @keyframes drawArc {
+      from { stroke-dashoffset: 1; }
+      to { stroke-dashoffset: 0; }
+    }
+    .arc-animated {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: drawArc 1.8s ease-in-out forwards;
+    }
+    @keyframes heartbeat {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.25); }
+    }
+    .heartbeat-pulse {
+      animation: heartbeat 2.5s ease-in-out infinite;
+    }
+
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce) {
       .arc-animated, .heartbeat-pulse { animation: none; }
@@ -198,7 +216,7 @@
 
   <main class="wrap" role="main">
     <!-- Living Systems Arc Logo -->
-    <svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="overflow: visible; max-width: 100%; margin: 0 auto;" role="img" aria-label="Law and Learning logo with connected circles representing evidence, policy and learning">
+    <svg width="300" height="112" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="overflow: visible; max-width: 100%; margin: 0 auto;" role="img" aria-label="Law and Learning logo with connected circles representing evidence, policy and learning">
       <title>Law & Learning Logo</title>
       <desc>Three connected circles (purple, blue, and gold) linked by a flowing arc, representing the integration of policy, evidence and learning.</desc>
       <defs>
@@ -232,7 +250,6 @@
     <h1>Law & Learning</h1>
     <div class="tagline">Cognitive Science · Legal Education · Study Design</div>
     <hr class="hero-rule">
-    <p class="lead-italic">Making Law Learnable</p>
     <p class="content-text">
       Australian educational initiative that makes law learnable through cognitive-science and evidence-based design. Develops practical, open study systems that turn complex legal and governance frameworks into teachable, memorable learning experiences for students, educators and professionals.
     </p>
