@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Independent research initiative by Jay Spudvilas (Jayden Spudvilas-Powell) applying cognitive science to legal education, GlassCase.org transparency systems, and governance frameworks.">
-  
+
   <!-- Author + identity -->
   <meta name="author" content="Law & Learning — Jay Spudvilas (Jayden Spudvilas-Powell)">
   <link rel="me" href="https://orcid.org/0009-0000-0945-0380">
@@ -12,17 +12,16 @@
   <link rel="me" href="https://jayspudvilas.com/">
   <link rel="me" href="https://glasscase.org/">
   <link rel="me" href="https://github.com/nuncprotunc">
-  
+
   <title>Law & Learning — Making Law Learnable</title>
   <link rel="canonical" href="https://lawandlearning.com/">
   <meta name="theme-color" content="#1A1F2E">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <script defer data-domain="lawandlearning.com" src="https://plausible.io/js/script.js"></script>
   <meta name="robots" content="index,follow">
-  
-  <!-- Open Graph / Facebook -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lawandlearning.com/">
   <meta property="og:title" content="Law & Learning — Making Law Learnable">
@@ -33,7 +32,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Law & Learning orbit mark with purple, blue and gold nodes">
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://lawandlearning.com/">
@@ -41,13 +40,14 @@
   <meta property="twitter:description" content="Independent research initiative applying cognitive science to legal education and governance frameworks.">
   <meta property="twitter:image" content="https://lawandlearning.com/og-image.png">
   <meta name="twitter:image:alt" content="Law & Learning orbit mark with purple, blue and gold nodes">
-  
-  <!-- Preconnect for fonts -->
+
+  <!-- Spectral for headings only -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap"></noscript>
+
   <style>
     :root {
       --bg: #0F1421;
@@ -58,19 +58,8 @@
       --azure: #4A90E2;
       --gold: #F6C744;
       --hairline: rgba(208,213,245,.14);
-      
-      /* Shadows + radii */
-      --r: 20px;
-      --shadow-lg: 0 0 24px rgba(94,80,255,.22);
-      --shadow-sm: 0 0 12px rgba(94,80,255,.16);
-      
-      /* Vertical rhythm */
-      --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px; --s6: 64px;
-      
-      /* Legacy aliases */
-      --purple: #6B21A8;
-      --azure-primary: var(--azure);
-      --navy: var(--panel);
+      --wrap: 880px;
+      --header-h: 60px;
     }
 
     html, body {
@@ -83,10 +72,10 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-    
+
     .wrap {
       padding: 0 20px;
-      max-width: 880px;
+      max-width: var(--wrap);
       margin: 0 auto;
       text-align: center;
       min-height: 100svh;
@@ -95,430 +84,161 @@
       justify-content: center;
       align-items: center;
     }
-    
-    /* Site header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: clamp(8px, 1.6vw, 18px);
-      padding-block: 14px;
-      padding-inline: clamp(12px, 3vw, 32px);
+
+    /* Header (surgical edits) */
+    header.site-nav {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--header-h);
       background: rgba(15,20,33,0.85);
-      border-bottom: 1px solid var(--hairline);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       -webkit-backdrop-filter: saturate(130%) blur(10px);
       backdrop-filter: saturate(130%) blur(10px);
-      flex-wrap: wrap;
+      border-bottom: 1px solid var(--hairline);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
     }
-    .site-header .brand {
-      display: flex;
-      align-items: center;
-      gap: clamp(6px, 1.2vw, 14px);
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-    .site-header .brand .logo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
-      padding: 5px 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(147, 51, 234, 0.6);
-      box-shadow: 0 4px 16px rgba(107, 33, 168, 0.35);
-    }
-    .site-header .brand .logo svg {
-      display: block;
-      width: 28px;
-      height: 28px;
-    }
-    .site-header .brand .title {
-      margin: 0;
-      font-family: 'Spectral', serif;
-      font-style: italic;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      line-height: 1.05;
-      white-space: nowrap;
-      color: #D9F0FF;
-    }
-    .site-header .title .divider { margin: 0 0.2em; font-weight: 400; }
-    .site-header .tag-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      line-height: 1;
-      font-weight: 600;
-      font-size: clamp(12px, 1.7vw, 14px);
-      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
-      color: #FFFFFF;
-      text-decoration: none;
-      max-width: 44vw;
-      white-space: nowrap;
+    .site-nav .nav-inner {
+      width: 100%; max-width: 1120px; height: 100%;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
       overflow: hidden;
-      text-overflow: ellipsis;
-      border: 1px solid rgba(147, 51, 234, 0.6);
-      box-shadow: 0 0 12px rgba(107, 33, 168, 0.28);
     }
-    .site-header .tag-pill:hover,
-    .site-header .tag-pill:focus {
-      text-decoration: none;
-      color: #FFFFFF;
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .brand svg { width: 28px; height: 28px; display: block; }
+    .wordmark {
+      margin: 0; display: flex; align-items: center; gap: .5ch;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-family: 'Spectral', serif; font-style: italic; font-weight: 600; color: #D9F0FF;
+      line-height: 1.05; letter-spacing: .005em;
     }
-    
-    @media (max-width: 480px) {
-      .site-header { gap: 10px; }
-      .site-header .brand { gap: 8px; }
-      .site-header .tag-pill {
-        max-width: 48vw;
-        padding-inline: 1.1rem 1.3rem;
-        min-width: 10.5rem;
-      }
+    /* Larger left title */
+    .wordmark .law {
+      display: inline-block; padding: 6px 12px; border-radius: 14px;
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      color: #fff; border: 1px solid rgba(147,51,234,.5);
+      box-shadow: 0 2px 10px rgba(107,33,168,.22);
+      font-size: 18px; font-weight: 700;
     }
-    body#ll .site-header .brand { gap: 12px; }
-  
-    /* Living Systems Arc animations */
-    @keyframes drawArc {
-      from { stroke-dashoffset: 1; }
-      to { stroke-dashoffset: 0; }
-    }
-    .arc-animated {
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: drawArc 1.8s ease-in-out forwards;
-    }
+    .wordmark .divider { font-size: 18px; opacity: .95; }
+    .wordmark .learning { font-size: 18px; font-weight: 700; }
 
-    @keyframes heartbeat {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.25); }
+    /* Smaller right pill + correct separator spacing */
+    .pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 6px 10px; border-radius: 999px;
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      color: #FFFFFF; font-weight: 700; text-decoration: none;
+      border: 1px solid rgba(147, 51, 234, 0.45);
+      box-shadow: 0 0 10px rgba(107, 33, 168, 0.16);
+      font-size: 12px; max-width: 48vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
+    .separator { display: inline-block; padding-inline: .5rem; line-height: 1; user-select: none; }
+    .pill .pill-link { color: inherit; text-decoration: none; }
 
-    @keyframes glow {
-      0%, 100% { filter: drop-shadow(0 0 6px rgba(74, 144, 226, 0.5)); }
-      50% { filter: drop-shadow(0 0 12px rgba(74, 144, 226, 0.8)); }
-    }
-
-    .arc-animated {
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: drawArc 2s ease-in-out forwards;
-    }
-
-    .heartbeat-pulse {
-      transform-box: fill-box;
-      transform-origin: center;
-    }
-
-    .heartbeat-ring {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: heartbeat 3s ease-in-out infinite;
-      stroke: rgba(158, 214, 255, 0.9);
-      stroke-width: 3;
-      opacity: 0.75;
-    }
-
-    .living-glow {
-      filter: drop-shadow(0 0 10px rgba(74,144,226,.45));
-    }
-
-    /* Reduce motion for accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      .arc-animated, .heartbeat-pulse, .living-glow {
-        animation: none;
-      }
-    }
-    
+    /* Hero */
     svg { margin: 0 auto 6px; }
-    
     h1 {
-      font-family: 'Spectral', ui-serif;
-      font-style: italic;
-      font-weight: 600;
+      font-family: 'Spectral', ui-serif; font-style: italic; font-weight: 600;
       font-size: clamp(28px, 6vw, 3rem);
       letter-spacing: .5px;
-      margin: 8px 0 6px;
-      color: #D9F0FF;
+      margin: 8px 0 6px; color: #D9F0FF;
       overflow-wrap: anywhere;
     }
-    
-    p {
-      line-height: 1.6;
-      margin: 0 0 var(--s2);
-      color: var(--muted);
-      font-size: clamp(16px, 3.8vw, 1rem);
-      max-width: 75ch;
-    }
-    
-    .lead-italic {
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.35;
-      margin: 0 auto 18px;
-      max-width: 560px;
-      color: #B5BED4;
-    }
-    
-    .links { margin-top: var(--s3); margin-bottom: var(--s3); }
-    
-    .hero-rule {
-      width: 60px;
-      height: 1px;
-      border: 0;
-      margin: 18px auto 16px;
-      background: linear-gradient(90deg, transparent, rgba(126,166,255,.45), transparent);
-    }
-    
-    a {
-      color: #7EA6FF;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+    p { line-height: 1.6; margin: 0 0 16px; color: var(--muted); font-size: 1rem; }
+    .lead-italic { font-style: italic; font-size: 1.05rem; line-height: 1.35; margin: 0 auto 18px; max-width: 560px; color: #B5BED4; }
+    .links { margin: 24px 0; }
+    .hero-rule { width: 60px; height: 1px; border: 0; margin: 18px auto 16px; background: linear-gradient(90deg, transparent, rgba(126,166,255,.45), transparent); }
+    a { color: #7EA6FF; text-decoration: underline; text-underline-offset: 2px; }
     a:hover { color: #F6C744; }
     a:visited { color: #9B7CFF; }
-    
-    .divider {
-      color: #6b7280;
-      margin: 0 8px;
-    }
-    
-    .tagline {
-      letter-spacing: .22em;
-      font-size: .78rem;
-      margin: 0 0 14px;
-      color: #7EA6FF;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
 
-    .role-subtitle {
-      display: block;
-      font-size: 0.94em;
-      line-height: 1.4;
-    }
-    
-    .muted-note {
-      margin: 4px auto 26px;
-      color: var(--footer-gray);
-      font-size: 0.9rem;
-    }
-    
+    .divider { color: #6b7280; margin: 0 8px; }
+    .tagline { letter-spacing: .22em; font-size: .78rem; margin: 0 0 14px; color: #7EA6FF; text-transform: uppercase; font-weight: 600; }
+
     .primary-link {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 12px;
+      display: inline-block; padding: 12px 22px; border-radius: 12px;
       background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
-      border: 1px solid rgba(147, 51, 234, 0.6);
-      color: #FFFFFF;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 14px rgba(107, 33, 168, 0.30);
+      border: 1px solid rgba(147, 51, 234, 0.6); color: #FFFFFF; font-weight: 700;
+      text-decoration: none; box-shadow: 0 0 14px rgba(107, 33, 168, 0.30);
       transition: transform .15s, box-shadow .15s, filter .15s;
     }
-    .primary-link:hover {
-      transform: translateY(-2px);
-      filter: saturate(1.05) brightness(1.02);
-      box-shadow: 0 0 18px rgba(107, 33, 168, 0.38);
-      color: #FFFFFF;
-    }
+    .primary-link:hover { transform: translateY(-2px); filter: saturate(1.05) brightness(1.02); box-shadow: 0 0 18px rgba(107, 33, 168, 0.38); color: #FFFFFF; }
+    .primary-link:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid #7EA6FF; outline-offset: 2px; }
 
-    .primary-link:focus-visible, .btn:focus-visible, a:focus-visible {
-      outline: 2px solid #7EA6FF;
-      outline-offset: 2px;
-    }
-
-    .content-text {
-      max-width: 620px;
-      margin: 0 auto 20px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      max-width: 880px;
-      margin: 1.75rem auto 0;
-      padding-top: 1.125rem;
-      color: #AEB4BD;
-    }
-    footer::before {
-      content: "";
-      display: block;
-      height: 1px;
-      margin: 0 0 1.125rem;
-      background: linear-gradient(90deg, transparent, var(--hairline), transparent);
-    }
-    footer p {
-      margin: 0.625rem 0 0;
-      font-size: .85rem;
-      line-height: 1.55;
-    }
+    /* Footer centred to container */
+    footer { max-width: var(--wrap); margin: 1.75rem auto 0; padding-top: 1.125rem; color: #AEB4BD; text-align: center; }
+    footer::before { content: ""; display: block; height: 1px; margin: 0 0 1.125rem; background: linear-gradient(90deg, transparent, var(--hairline), transparent); }
+    footer p { margin: 0.625rem 0 0; font-size: .85rem; line-height: 1.55; }
     .footer-text { color: #AEB4BD; margin: 0.625rem 0 0; }
     .footer-text:first-of-type { margin-top: 0; }
-    .footer-text--spaced { letter-spacing: 0.12em; opacity: 0.8; margin-top: 0.75rem; }
     .footer-text--sm { font-size: 0.75rem; letter-spacing: 0.08em; opacity: 0.7; margin-top: 0.75rem; }
 
-    /* Card components for future use */
-    .row { background: var(--bg); padding: var(--s4) var(--s2) var(--s5); }
-    .grid {
-      max-width: 1120px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;
-    }
-    .card {
-      position: relative; border-radius: var(--r);
-      padding: var(--s4); color: var(--ink);
-      border: 1px solid var(--hairline);
-      background: radial-gradient(120% 140% at 70% 0%, rgba(91,95,239,.16) 0%, var(--panel) 70%);
-      box-shadow: var(--shadow-lg);
-    }
-    .card h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: .01em; margin: 0 0 var(--s2); }
-    .card p { color: var(--muted); margin: 0 0 var(--s2); }
-    .rule {
-      border: 0; height: 1px; margin: var(--s3) 0;
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(214,218,244,.18) 50%, rgba(255,255,255,0) 100%);
-    }
-    .card--primary { grid-column: span 7; }
-    .card--primary::before {
-      content: ""; position: absolute; inset: auto auto 0 10%;
-      width: 120px; height: 120px; filter: blur(40px);
-      background: radial-gradient(circle, rgba(246,199,68,.18), transparent 70%);
-      z-index: 0; animation: pulseGlow 6s ease-in-out infinite;
-    }
-    .card--primary > * { position: relative; z-index: 1; }
-    .card--secondary { grid-column: span 5; box-shadow: var(--shadow-sm); }
-    .card--secondary .card__inner { max-width: 360px; margin: 0 auto; text-align: left; }
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      .card--primary, .card--secondary { grid-column: 1 / -1; }
-    }
-
-    .chip {
-      display: inline-block; font-size: .65rem; letter-spacing: .19em; text-transform: uppercase;
-      color: var(--gold); background: rgba(246,199,68,.10);
-      border: 1px solid rgba(246,199,68,.25);
-      border-radius: 999px; padding: 6px 10px; margin-bottom: 8px; font-weight: 700;
-    }
-
-    .textlink {
-      display: inline-flex; gap: 6px; font-weight: 700; text-decoration: none;
-      background: linear-gradient(90deg, #5B5FEF, #F6C744);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .textlink:hover { opacity: .85; }
-
-    .btn {
-      display: inline-block; padding: 12px 20px; border-radius: 12px; font-weight: 700;
-      background: linear-gradient(130deg, #5B5FEF 0%, #3E5BE8 55%, #F6C744 100%);
-      color: #0B0E1A; text-decoration: none; box-shadow: 0 0 14px rgba(94,80,255,.25);
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .btn:hover { transform: translateY(-2px); filter: saturate(1.05) brightness(1.02); }
-
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      .arc-animated, .heartbeat-pulse { animation: none; }
     }
   </style>
 </head>
-<body id="ll">
-  <header class="site-header" role="banner">
-    <div class="brand">
-      <a class="logo" href="/" aria-label="Law &amp; Learning home">
-        <svg width="32" height="32" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<body>
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <div class="brand">
+        <!-- Compact 3-circle logo -->
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="15" cy="40" r="8" fill="#6B21A8"/>
           <circle cx="40" cy="40" r="8" fill="#4A90E2"/>
           <circle cx="65" cy="40" r="8" fill="#F6C744"/>
-          <line x1="23" y1="40" x2="32" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
-          <line x1="48" y1="40" x2="57" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
+          <line x1="23" y1="40" x2="32" y2="40" stroke="#A7C5FF" stroke-width="2.2" opacity="0.9"/>
+          <line x1="48" y1="40" x2="57" y2="40" stroke="#A7C5FF" stroke-width="2.2" opacity="0.9"/>
         </svg>
-      </a>
-      <span class="title"><span class="title-law">Law</span><span class="title-divider">&amp;</span><span class="title-learning">Learning</span></span>
+        <p class="wordmark"><span class="law">Law</span><span class="divider">&amp;</span><span class="learning">Learning</span></p>
+      </div>
+      <span class="pill" aria-label="Making Law Learnable">Making Law Learnable <span class="separator">·</span> <a class="pill-link" href="https://lawandlearning.com">lawandlearning.com</a></span>
     </div>
-    <a class="tag-pill" href="https://lawandlearning.com" aria-label="Visit lawandlearning.com">Making Law Learnable •lawandlearning.com</a>
   </header>
+
   <main class="wrap" role="main">
     <!-- Living Systems Arc Logo -->
     <svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="overflow: visible; max-width: 100%; margin: 0 auto;" role="img" aria-label="Law and Learning logo with connected circles representing evidence, policy and learning">
       <title>Law & Learning Logo</title>
       <desc>Three connected circles (purple, blue, and gold) linked by a flowing arc, representing the integration of policy, evidence and learning.</desc>
-      <!-- SVG filter for hand-drawn quality -->
       <defs>
         <filter id="roughen">
           <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
           <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
         </filter>
-        
-        <!-- Gradient for arc (purple → blue → gold) -->
         <linearGradient id="livingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:#6B21A8;stop-opacity:1" />
           <stop offset="50%" style="stop-color:#4A90E2;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#F6C744;stop-opacity:1" />
         </linearGradient>
       </defs>
-      
-      <!-- Purple circle (policy) with subtle glow -->
-      <circle cx="35" cy="100" r="25" fill="var(--purple)" filter="drop-shadow(0 0 6px rgba(147, 51, 234, 0.5))"/>
-      
-      <!-- Hand-drawn arc with gradient -->
-      <path class="hand-drawn arc-animated" 
-            d="M 57 100 Q 130 50, 200 100 Q 270 150, 365 100" 
-            pathLength="1"
-            stroke="url(#livingGrad)" 
-            stroke-width="3.5" 
-            fill="none" 
-            filter="url(#roughen)"
-            stroke-linecap="round"/>
-      
-      <!-- Heartbeat pulse at midpoint -->
+      <circle cx="35" cy="100" r="25" fill="#6B21A8" filter="drop-shadow(0 0 6px rgba(147, 51, 234, 0.5))"/>
+      <path class="hand-drawn arc-animated" d="M 57 100 Q 130 50, 200 100 Q 270 150, 365 100" pathLength="1" stroke="url(#livingGrad)" stroke-width="3.5" fill="none" filter="url(#roughen)" stroke-linecap="round"/>
       <g class="heartbeat-pulse" aria-hidden="true">
         <circle cx="200" cy="100" r="7" fill="white" opacity="0.6"/>
-        <circle class="heartbeat-ring" cx="200" cy="100" r="20" fill="none" stroke="var(--azure-primary)" stroke-width="2" opacity="0.4"/>
+        <circle class="heartbeat-ring" cx="200" cy="100" r="20" fill="none" stroke="#4A90E2" stroke-width="2" opacity="0.4"/>
       </g>
-      
-      <!-- Data points along arc (Fibonacci spacing) -->
       <circle cx="100" cy="85" r="2.5" fill="white" opacity="0.4" aria-hidden="true"/>
       <circle cx="155" cy="68" r="2.5" fill="white" opacity="0.4" aria-hidden="true"/>
       <circle cx="245" cy="128" r="2.5" fill="white" opacity="0.4" aria-hidden="true"/>
       <circle cx="300" cy="112" r="2.5" fill="white" opacity="0.4" aria-hidden="true"/>
       <circle cx="330" cy="105" r="2.5" fill="white" opacity="0.4" aria-hidden="true"/>
-      
-      <!-- Blue circle with living glow (evidence) -->
-      <circle class="living-glow" cx="200" cy="100" r="28" fill="var(--azure-primary)"/>
-      <circle cx="200" cy="100" r="25" fill="var(--azure-primary)"/>
-      
-      <!-- Gold circle (learning) - 36% larger for hierarchy -->
-      <circle cx="365" cy="100" r="34" fill="var(--gold)"/>
-      
+      <circle class="living-glow" cx="200" cy="100" r="28" fill="#4A90E2"/>
+      <circle cx="200" cy="100" r="25" fill="#4A90E2"/>
+      <circle cx="365" cy="100" r="34" fill="#F6C744"/>
     </svg>
-    
+
     <!-- Content -->
     <h1>Law & Learning</h1>
-
-    <div class="tagline">
-      Evidence · Integrity · Design
-    </div>
-
+    <div class="tagline">Evidence · Integrity · Design</div>
     <hr class="hero-rule">
-
     <p class="lead-italic">Making Law Learnable</p>
-
     <p class="content-text">
       Educational initiative applying cognitive-science and evidence-based learning to legal education. Creates study tools, visual frameworks and white papers that make complex legal and governance systems teachable and memorable.
     </p>
-
     <p class="muted-note">Soft launch: infrastructure live · Full resource library: 2026</p>
-
     <div class="links">
-      <a href="mailto:hello@lawandlearning.com"
-         class="primary-link"
-         role="button"
-         aria-label="Email Law & Learning">Get in Touch</a>
+      <a href="mailto:hello@lawandlearning.com" class="primary-link" role="button" aria-label="Email Law & Learning">Get in Touch</a>
     </div>
 
     <footer>
@@ -530,13 +250,11 @@
         <a href="https://github.com/nuncprotunc" target="_blank" rel="noopener noreferrer">GitHub</a>
         <span class="divider" aria-hidden="true">·</span>
       </p>
-
       <p class="footer-text">Jay Spudvilas (also published as Jayden Spudvilas-Powell). Founder of GlassCase.org and Law &amp; Learning.</p>
-
       <p class="footer-text footer-text--sm">ABN: 85&nbsp;293&nbsp;071&nbsp;070</p>
     </footer>
   </main>
-  
+
   <!-- Structured data -->
   <script type="application/ld+json">
   {
