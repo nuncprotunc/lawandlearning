@@ -99,9 +99,57 @@
     /* Sticky nav like GlassCase */
     header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(15,20,33,0.85); -webkit-backdrop-filter: saturate(130%) blur(10px); backdrop-filter: saturate(130%) blur(10px); border-bottom: 1px solid var(--hairline); }
     .site-nav .nav-inner { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand .wordmark { font-family: 'Spectral', serif; font-style: italic; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); font-size: 1.25rem; }
-    .pill { background: linear-gradient(135deg, var(--violet), var(--azure)); color: #0B0E1A; padding: 6px 12px; border-radius: 999px; font-weight: 800; font-size: 0.78rem; border: 1px solid rgba(201,192,255,.6); white-space: nowrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .wordmark { 
+      font-family: 'Spectral', serif; 
+      font-style: italic; 
+      font-weight: 700; 
+      letter-spacing: 0.02em; 
+      font-size: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+    }
+    
+    .brand .wordmark .law {
+      color: #D9F0FF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 14px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      border: 1px solid rgba(147, 51, 234, 0.6);
+      box-shadow: 0 4px 16px rgba(107, 33, 168, 0.35);
+      font-weight: 800;
+    }
+    
+    .brand .wordmark .divider {
+      color: #D9F0FF;
+      font-weight: 400;
+      margin: 0 0.25em;
+      display: inline-flex;
+      font-size: 1.1em;
+    }
+    
+    .brand .wordmark .learning {
+      color: #D9F0FF;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .pill { 
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      color: #FFFFFF; 
+      padding: 6px 12px; 
+      border-radius: 999px; 
+      font-weight: 800; 
+      font-size: 0.78rem; 
+      border: 1px solid rgba(147, 51, 234, 0.6); 
+      box-shadow: 0 0 12px rgba(107, 33, 168, 0.28);
+      white-space: nowrap; 
+      text-decoration: none; 
+    }
+    a.pill, a.pill:link, a.pill:visited, a.pill:hover, a.pill:focus, a.pill:active { text-decoration: none !important; border-bottom: 0 !important; outline: none; }
   
     /* Living Systems Arc animations */
     @keyframes drawArc {
@@ -164,7 +212,7 @@
       font-size: 3rem;
       letter-spacing: .5px;
       margin: 8px 0 6px;
-      color: #CFFAFE;
+      color: #D9F0FF;
     }
     
     p {
@@ -180,7 +228,7 @@
       line-height: 1.35;
       margin: 0 auto 18px;
       max-width: 560px;
-      color: #9DADC0;
+      color: #B5BED4;
     }
     
     .links { margin-top: var(--s3); margin-bottom: var(--s3); }
@@ -194,12 +242,12 @@
     }
     
     a {
-      color: var(--gold);
+      color: #7EA6FF;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
-    a:hover { color: var(--azure); }
-    a:visited { color: #DAB85C; }
+    a:hover { color: #F6C744; }
+    a:visited { color: #9B7CFF; }
     
     .divider {
       color: #6b7280;
@@ -210,9 +258,9 @@
       letter-spacing: .22em;
       font-size: .78rem;
       margin: 0 0 14px;
-      color: var(--azure);
+      color: #7EA6FF;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .role-subtitle {
@@ -231,20 +279,19 @@
       display: inline-block;
       padding: 12px 22px;
       border-radius: 12px;
-      background: #8F6CFF;
-      border: 1px solid #C9C0FF;
-      color: #fff;
+      background: linear-gradient(135deg, #6B21A8 0%, #5B5FEF 100%);
+      border: 1px solid rgba(147, 51, 234, 0.6);
+      color: #FFFFFF;
       font-weight: 700;
       text-decoration: none;
-      text-shadow: 0 1px 0 rgba(0,0,0,.25);
-      box-shadow: 0 0 12px rgba(143,108,255,.35);
-      transition: transform .15s, box-shadow .15s, background .15s;
+      box-shadow: 0 0 14px rgba(107, 33, 168, 0.30);
+      transition: transform .15s, box-shadow .15s, filter .15s;
     }
     .primary-link:hover {
-      background: #9B7CFF;
-      color: #fff;
-      box-shadow: 0 0 16px rgba(143,108,255,.45);
       transform: translateY(-2px);
+      filter: saturate(1.05) brightness(1.02);
+      box-shadow: 0 0 18px rgba(107, 33, 168, 0.38);
+      color: #FFFFFF;
     }
 
     .primary-link:focus-visible, .btn:focus-visible, a:focus-visible {
@@ -262,23 +309,26 @@
 
     footer {
       max-width: 880px;
-      margin: 28px auto 0;
-      padding-top: 18px;
+      margin: 1.75rem auto 0;
+      padding-top: 1.125rem;
       color: #AEB4BD;
     }
     footer::before {
       content: "";
       display: block;
       height: 1px;
-      margin: 0 0 18px;
+      margin: 0 0 1.125rem;
       background: linear-gradient(90deg, transparent, var(--hairline), transparent);
     }
     footer p {
-      margin: 10px 0 0;
+      margin: 0.625rem 0 0;
       font-size: .85rem;
       line-height: 1.55;
     }
-    .footer-text { color: #AEB4BD; }
+    .footer-text { color: #AEB4BD; margin: 0.625rem 0 0; }
+    .footer-text:first-of-type { margin-top: 0; }
+    .footer-text--spaced { letter-spacing: 0.12em; opacity: 0.8; margin-top: 0.75rem; }
+    .footer-text--sm { font-size: 0.75rem; letter-spacing: 0.08em; opacity: 0.7; margin-top: 0.75rem; }
 
     /* Card components for future use */
     .row { background: var(--bg); padding: var(--s4) var(--s2) var(--s5); }
@@ -346,9 +396,17 @@
   <header class="site-nav" role="banner">
     <div class="nav-inner">
       <div class="brand">
-        <div class="wordmark">Law &amp; Learning</div>
+        <!-- Compact 3-circle logo -->
+        <svg width="32" height="32" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="15" cy="40" r="8" fill="#6B21A8"/>
+          <circle cx="40" cy="40" r="8" fill="#4A90E2"/>
+          <circle cx="65" cy="40" r="8" fill="#F6C744"/>
+          <line x1="23" y1="40" x2="32" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
+          <line x1="48" y1="40" x2="57" y2="40" stroke="#7EA6FF" stroke-width="2.5" opacity="0.7"/>
+        </svg>
+        <div class="wordmark"><span class="law">Law</span><span class="divider">&amp;</span><span class="learning">Learning</span></div>
       </div>
-      <div class="pill" aria-label="Site tagline">Making Law Learnable</div>
+      <span class="pill" aria-label="Making Law Learnable on lawandlearning.com">Making Law Learnable • lawandlearning.com</span>
     </div>
   </header>
   <main class="wrap" role="main">
@@ -409,10 +467,6 @@
     <!-- Content -->
     <h1>Law & Learning</h1>
 
-    <p style="color: #64748B; font-size: 1rem; margin: -3px 0 4px;">
-      By Jay Spudvilas
-    </p>
-
     <div class="tagline">
       Evidence · Integrity · Design
     </div>
@@ -435,19 +489,20 @@
     </div>
 
     <footer>
-      <p class="footer-text">Founded by Jay Spudvilas (Jayden Spudvilas-Powell)</p>
-
       <p class="footer-text">
+        <a href="/">Law &amp; Learning</a>
+        <span class="divider" aria-hidden="true">·</span>
+        <a href="https://glasscase.org" target="_blank" rel="noopener noreferrer">GlassCase.org</a>
+        <span class="divider" aria-hidden="true">·</span>
         <a href="https://linkedin.com/company/lawandlearning" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <span class="divider" aria-hidden="true">·</span>
         <a href="https://github.com/nuncprotunc" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="divider" aria-hidden="true">·</span>
       </p>
 
-      <p class="footer-text">Professional inquiries → <a href="https://jayspudvilas.com">jayspudvilas.com</a></p>
+      <p class="footer-text">Jay Spudvilas (also published as Jayden Spudvilas‑Powell / Spudvilas). Founder of GlassCase.org and Law &amp; Learning.</p>
 
-      <p class="footer-text">Transparency lab → <a href="https://glasscase.org" target="_blank" rel="noopener noreferrer">glasscase.org</a></p>
-
-      <p class="footer-text" style="font-size: 0.75rem; letter-spacing: 0.08em; opacity: 0.7;">ABN: 85&nbsp;293&nbsp;071&nbsp;070</p>
+      <p class="footer-text footer-text--sm">ABN: 85&nbsp;293&nbsp;071&nbsp;070</p>
     </footer>
   </main>
   
