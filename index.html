@@ -66,8 +66,8 @@
 
   <title>Law & Learning — Making Law Learnable</title>
   <link rel="canonical" href="https://lawandlearning.com/">
-  <meta name="theme-color" content="#1A1F2E">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="robots" content="index,follow">
@@ -109,8 +109,8 @@
 
     body {
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #1A1F2E;
-      color: #fff;
+      background: #ffffff;
+      color: #1a1a2e;
       line-height: 1.6;
     }
 
@@ -120,13 +120,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(74, 144, 226, 0.12);
-      background: rgba(15, 20, 33, 0.9);
+      border-bottom: 1px solid rgba(74, 144, 226, 0.15);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .logo-area {
@@ -136,8 +136,8 @@
     }
 
     .logo-area svg {
-      width: 42px;
-      height: 42px;
+      width: 48px;
+      height: 48px;
     }
 
     .logo-text {
@@ -145,7 +145,7 @@
       font-size: 1.25rem;
       font-style: italic;
       font-weight: 600;
-      color: #CFFAFE;
+      color: #1a1a2e;
       text-decoration: none;
     }
 
@@ -176,14 +176,14 @@
       font-size: 3.75rem;
       font-weight: 600;
       font-style: italic;
-      color: #CFFAFE;
+      color: #1a1a2e;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
 
     .hero-tagline {
       font-size: 0.9375rem;
-      color: #94a3b8;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: 3px;
       font-weight: 500;
@@ -192,7 +192,7 @@
 
     .hero-description {
       font-size: 1.0625rem;
-      color: #9DADC0;
+      color: #475569;
       line-height: 1.75;
       margin-bottom: 1.5rem;
       max-width: 720px;
@@ -201,19 +201,19 @@
     }
 
     .hero-description a {
-      color: #60a5fa;
+      color: #4A90E2;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
 
     .hero-description a:hover {
-      border-bottom-color: #60a5fa;
+      border-bottom-color: #4A90E2;
     }
 
     .muted-note {
       font-size: 0.9375rem;
-      color: #7B8A9E;
+      color: #94a3b8;
       margin-bottom: 2.5rem;
       font-weight: 500;
     }
@@ -241,12 +241,12 @@
       box-shadow: 0 8px 24px rgba(107, 33, 168, 0.3);
     }
 
-    /* Footer - darkened background matching Jay Spudvilas */
+    /* Footer - light background matching Jay Spudvilas */
     .footer {
       padding: 2.25rem 1.5rem 1.75rem;
       text-align: center;
-      background: rgba(15, 20, 30, 0.8);
-      border-top: 1px solid rgba(74, 144, 226, 0.12);
+      background: #f8fafc;
+      border-top: 1px solid rgba(74, 144, 226, 0.15);
       margin-top: 4rem;
     }
 
@@ -259,7 +259,7 @@
     }
 
     .footer-links a {
-      color: #60a5fa;
+      color: #4A90E2;
       text-decoration: none;
       font-size: 0.9375rem;
       font-weight: 500;
@@ -267,52 +267,41 @@
     }
 
     .footer-links a:hover {
-      color: #93c5fd;
+      color: #6c63ff;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
 
     .footer-attribution {
-      color: #9DADC0;
+      color: #475569;
       font-size: 0.875rem;
       margin: 0 0 0.375rem;
       letter-spacing: 0.015em;
     }
 
     .footer-meta {
-      color: #7B8A9E;
+      color: #64748b;
       font-size: 0.8125rem;
       margin: 0 0 0.5rem;
       letter-spacing: 0.015em;
     }
 
     .footer-abn {
-      color: #64748b;
+      color: #94a3b8;
       font-size: 0.75rem;
       margin: 0;
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.5px;
     }
 
-    /* Logo animations */
-    @keyframes drawArc {
-      from { stroke-dashoffset: 1; }
-      to { stroke-dashoffset: 0; }
+    /* Remove old logo animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .arc-animated {
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: drawArc 1.8s ease-in-out forwards;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-    }
-
-    .pulse-dot {
-      animation: pulse 2s ease-in-out infinite;
+    .hero-logo {
+      animation: fadeIn 0.8s ease-out;
     }
 
     /* Mobile */
@@ -336,8 +325,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .arc-animated,
-      .pulse-dot {
+      .hero-logo {
         animation: none;
       }
     }
@@ -347,13 +335,18 @@
 
 <header class="header" role="banner">
   <div class="logo-area">
-    <!-- Three-circle logo with connecting lines -->
-    <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="20" cy="40" r="10" fill="#6B21A8"/>
-      <circle cx="50" cy="40" r="10" fill="#4A90E2"/>
-      <circle cx="80" cy="40" r="10" fill="#F6C744"/>
-      <line x1="30" y1="40" x2="40" y2="40" stroke="#4A90E2" stroke-width="2.5" opacity="0.7"/>
-      <line x1="60" y1="40" x2="70" y2="40" stroke="#4A90E2" stroke-width="2.5" opacity="0.7"/>
+    <!-- New L|L logo -->
+    <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="divider64" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="31" fill="#ffffff" stroke="#6c63ff" stroke-width="2"/>
+      <text x="20" y="43" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a1a2e" text-anchor="middle">L</text>
+      <rect x="31" y="14" width="2" height="36" fill="url(#divider64)"/>
+      <text x="44" y="43" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a1a2e" text-anchor="middle">L</text>
     </svg>
     <a class="logo-text" href="https://lawandlearning.com/">Law & Learning</a>
   </div>
@@ -361,41 +354,19 @@
 </header>
 
 <main class="hero" role="main">
-  <!-- Clean S-curve logo -->
-  <svg class="hero-logo" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Law and Learning logo">
+  <!-- New full-width L|L logo -->
+  <svg class="hero-logo" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Law and Learning logo">
     <title>Law & Learning Logo</title>
     <defs>
-      <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#6B21A8;stop-opacity:0.8" />
-        <stop offset="50%" style="stop-color:#4A90E2;stop-opacity:0.8" />
-        <stop offset="100%" style="stop-color:#F6C744;stop-opacity:0.8" />
+      <linearGradient id="divider9b" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:1" />
       </linearGradient>
     </defs>
-    
-    <!-- S-curve path -->
-    <path class="arc-animated" 
-          d="M 80 140 Q 140 110, 190 140 Q 240 170, 310 140" 
-          stroke="url(#arcGrad)" 
-          stroke-width="3" 
-          fill="none" 
-          pathLength="1"
-          stroke-linecap="round"/>
-    
-    <!-- Decorative dots -->
-    <circle cx="110" cy="128" r="2" fill="#4A90E2" opacity="0.5"/>
-    <circle cx="140" cy="120" r="1.5" fill="#4A90E2" opacity="0.4"/>
-    <circle cx="165" cy="135" r="2" fill="#4A90E2" opacity="0.5"/>
-    <circle cx="215" cy="155" r="1.5" fill="#4A90E2" opacity="0.4"/>
-    <circle cx="245" cy="153" r="2" fill="#4A90E2" opacity="0.5"/>
-    <circle cx="280" cy="143" r="1.5" fill="#4A90E2" opacity="0.4"/>
-    
-    <!-- Animated center dot -->
-    <circle class="pulse-dot" cx="190" cy="140" r="4" fill="#4A90E2" opacity="0.6"/>
-    
-    <!-- Main circles -->
-    <circle cx="80" cy="140" r="18" fill="#6b21a8"/>
-    <circle cx="190" cy="140" r="22" fill="#4A90E2"/>
-    <circle cx="310" cy="140" r="30" fill="#F6C744"/>
+    <circle cx="150" cy="150" r="146" fill="#ffffff" stroke="#6c63ff" stroke-width="4"/>
+    <text x="150" y="130" font-family="Georgia, serif" font-size="38.4" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="3">LAW</text>
+    <rect x="120" y="142" width="60" height="4" fill="url(#divider9b)"/>
+    <text x="150" y="185" font-family="Georgia, serif" font-size="38.4" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="3">LEARNING</text>
   </svg>
 
   <h1 class="hero-name">Law & Learning</h1>
