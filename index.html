@@ -100,6 +100,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600;1,700&display=swap"></noscript>
 
+  <link rel="stylesheet" href="/assets/ll-chrome.css">
+  <script src="/assets/ll-chrome.js" defer></script>
+
   <style>
     * {
       margin: 0;
@@ -112,50 +115,6 @@
       background: #ffffff;
       color: #1a1a2e;
       line-height: 1.6;
-    }
-
-    /* Header - matching Jay Spudvilas structure */
-    .header {
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(74, 144, 226, 0.15);
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-    }
-
-    .logo-area svg {
-      width: 48px;
-      height: 48px;
-    }
-
-    .logo-text {
-      font-family: 'Spectral', Georgia, serif;
-      font-size: 1.25rem;
-      font-style: italic;
-      font-weight: 600;
-      color: #1a1a2e;
-      text-decoration: none;
-    }
-
-    .header-pill {
-      padding: 0.5rem 1.25rem;
-      border-radius: 20px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      background: #6B64F6;
-      color: white;
     }
 
     /* Hero - matching spacing from Jay Spudvilas */
@@ -241,59 +200,6 @@
       box-shadow: 0 8px 24px rgba(107, 33, 168, 0.3);
     }
 
-    /* Footer - light background matching Jay Spudvilas */
-    .footer {
-      padding: 2.25rem 1.5rem 1.75rem;
-      text-align: center;
-      background: #f8fafc;
-      border-top: 1px solid rgba(74, 144, 226, 0.15);
-      margin-top: 4rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.25rem;
-    }
-
-    .footer-links a {
-      color: #4A90E2;
-      text-decoration: none;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: #6c63ff;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .footer-attribution {
-      color: #475569;
-      font-size: 0.875rem;
-      margin: 0 0 0.375rem;
-      letter-spacing: 0.015em;
-    }
-
-    .footer-meta {
-      color: #64748b;
-      font-size: 0.8125rem;
-      margin: 0 0 0.5rem;
-      letter-spacing: 0.015em;
-    }
-
-    .footer-abn {
-      color: #94a3b8;
-      font-size: 0.75rem;
-      margin: 0;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.5px;
-    }
-
     /* Remove old logo animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -309,19 +215,6 @@
       .hero-name {
         font-size: 2.75rem;
       }
-
-      .header {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .header-pill {
-        display: none;
-      }
-
-      .footer-links {
-        gap: 1.5rem;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -333,25 +226,7 @@
 </head>
 <body>
 
-<header class="header" role="banner">
-  <div class="logo-area">
-    <!-- New L|L logo -->
-    <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="divider64" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <circle cx="32" cy="32" r="31" fill="#ffffff" stroke="#6c63ff" stroke-width="2"/>
-      <text x="20" y="43" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a1a2e" text-anchor="middle">L</text>
-      <rect x="31" y="14" width="2" height="36" fill="url(#divider64)"/>
-      <text x="44" y="43" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#1a1a2e" text-anchor="middle">L</text>
-    </svg>
-    <a class="logo-text" href="https://lawandlearning.com/">Law & Learning</a>
-  </div>
-  <div class="header-pill">Making Law Learnable</div>
-</header>
+<div id="ll-header"></div>
 
 <main class="hero" role="main">
   <!-- New full-width L|L logo -->
@@ -384,26 +259,7 @@
   </div>
 </main>
 
-<footer class="footer">
-  <nav class="footer-links">
-    <a href="https://glasscase.org">GlassCase.org</a>
-    <a href="https://linkedin.com/company/lawandlearning">LinkedIn</a>
-    <a href="https://github.com/nuncprotunc">GitHub</a>
-    <a href="mailto:hello@lawandlearning.com">Email</a>
-  </nav>
-  
-  <p class="footer-attribution">
-    Jay Spudvilas (also published as Jayden Spudvilas-Powell)
-  </p>
-  
-  <p class="footer-meta">
-    Founder of GlassCase.org and Law & Learning
-  </p>
-  
-  <p class="footer-abn">
-    ABN 85 293 071 070
-  </p>
-</footer>
+<div id="ll-footer" data-source="index"></div>
 
 <!-- Structured data -->
 <script type="application/ld+json">

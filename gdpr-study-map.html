@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLY993B4QZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JLY993B4QZ');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Free cognitive science-based GDPR study architecture for CIPP/E exam preparation. Five layers distilling exam-critical doctrine with maximum scoring potential.">
+  <meta name="keywords" content="GDPR study guide, CIPP/E exam, CIPP/E preparation, GDPR certification, data protection, privacy certification, IAPP, Law and Learning">
+  <meta name="author" content="Law & Learning">
+
+  <title>GDPR Study Map for CIPP/E | Law & Learning</title>
+  <link rel="canonical" href="https://lawandlearning.com/gdpr-study-map">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lawandlearning.com/gdpr-study-map">
+  <meta property="og:title" content="GDPR Study Map for CIPP/E | Law & Learning">
+  <meta property="og:description" content="Free cognitive science-based GDPR study architecture. Five layers, minimal surface area, maximum scoring potential.">
+  <meta property="og:image" content="https://lawandlearning.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/ll-chrome.css">
+  <script src="/assets/ll-chrome.js" defer></script>
+
+  <style>
+    :root {
+      --text: #1a1a2e;
+      --text-muted: #64748b;
+      --accent: #6c63ff;
+      --accent-blue: #4A90E2;
+      --accent-subtle: #EEF2FF;
+      --border: rgba(74, 144, 226, 0.15);
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --tier1: #4F46E5;
+      --tier2: #7C3AED;
+      --tier3: #A78BFA;
+      --warning: #F59E0B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Main container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+
+    /* Page header */
+    .page-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .page-header h1 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 2.75rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* Navigation tabs */
+    .nav { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .nav-btn {
+      padding: 0.625rem 1.25rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Layers */
+    .layer { display: none; animation: fadeIn 0.3s ease; }
+    .layer.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .layer-header { margin-bottom: 2.5rem; }
+    .layer-number { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    h2 { font-family: 'Spectral', Georgia, serif; font-size: 2rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 0.75rem; }
+    .layer-desc { color: var(--text-muted); font-size: 0.9375rem; }
+
+    /* Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: all 0.2s; }
+    .card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(108, 99, 255, 0.08); }
+    .card-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.625rem; }
+    .card h3 { font-family: 'Spectral', Georgia, serif; font-size: 1.375rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 0.75rem; }
+    .card p { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem; line-height: 1.6; }
+    .card-articles { font-size: 0.8125rem; color: var(--accent); background: var(--accent-subtle); padding: 0.5rem 0.75rem; border-radius: 6px; display: inline-block; }
+    .exam-critical { font-size: 0.8125rem; color: var(--text); padding: 0.75rem; background: #FEF3C7; border-left: 3px solid var(--warning); margin-top: 1rem; border-radius: 0 6px 6px 0; }
+
+    /* Cluster cards */
+    .cluster-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+    .cluster-number { width: 2.25rem; height: 2.25rem; background: var(--accent); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; margin-bottom: 1rem; }
+    .cluster-title { font-family: 'Spectral', Georgia, serif; font-size: 1.5rem; font-weight: 600; font-style: italic; margin-bottom: 0.5rem; }
+    .cluster-articles { font-size: 0.8125rem; color: var(--text-muted); }
+    .cluster-section { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+    .cluster-section-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.625rem; }
+    .cluster-section ul { list-style: none; padding-left: 0; }
+    .cluster-section li { padding: 0.375rem 0; font-size: 0.875rem; color: var(--text); padding-left: 1rem; position: relative; }
+    .cluster-section li::before { content: "→"; position: absolute; left: 0; color: var(--accent); opacity: 0.5; }
+    .golden-rule { background: linear-gradient(135deg, var(--accent-subtle) 0%, #F5F3FF 100%); border: 1px solid var(--accent); border-radius: 8px; padding: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--text); }
+    .golden-rule strong { color: var(--accent); }
+
+    /* Tier sections */
+    .tier-section { margin-bottom: 2.5rem; }
+    .tier-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .tier-badge { padding: 0.375rem 0.875rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: white; }
+    .tier-badge.tier1 { background: var(--tier1); }
+    .tier-badge.tier2 { background: var(--tier2); }
+    .tier-badge.tier3 { background: var(--tier3); }
+    .tier-title { font-size: 1rem; font-weight: 500; }
+    .tier-desc { font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .article-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .article-tag { padding: 0.5rem 0.875rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 0.8125rem; color: var(--text); }
+    .article-tag.tier1 { border-left: 3px solid var(--tier1); }
+    .article-tag.tier2 { border-left: 3px solid var(--tier2); }
+    .article-tag.tier3 { border-left: 3px solid var(--tier3); }
+
+    /* Scaffold cards */
+    .scaffold-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+    .scaffold-title { font-family: 'Spectral', Georgia, serif; font-size: 1.375rem; font-weight: 600; font-style: italic; margin-bottom: 1.25rem; }
+    .decision-tree { font-family: 'SF Mono', Monaco, monospace; font-size: 0.8125rem; line-height: 1.8; background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; overflow-x: auto; white-space: pre-wrap; }
+    .decision-tree .q { color: var(--accent); font-weight: 600; }
+    .decision-tree .y { color: #059669; }
+    .decision-tree .n { color: #DC2626; }
+    .decision-tree .result { color: var(--text); font-weight: 500; }
+
+    /* Tables */
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-top: 1rem; }
+    .comparison-table th { text-align: left; padding: 0.875rem 1rem; background: var(--bg-alt); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); border-bottom: 2px solid var(--border); }
+    .comparison-table td { padding: 0.875rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table tr:hover td { background: var(--accent-subtle); }
+
+    /* Exam cards */
+    .exam-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.25rem; }
+    .exam-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text); }
+    .exam-card p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .distractor { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.8125rem; color: #991B1B; margin: 0.5rem 0; }
+    .correct { background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.8125rem; color: #065F46; margin: 0.5rem 0; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .container { padding: 2rem 1.25rem; }
+      .page-header h1 { font-size: 2rem; }
+      .nav { gap: 0.375rem; }
+      .nav-btn { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .ll-site-header, .nav, .site-footer { display: none; }
+      .layer { display: block !important; page-break-after: always; }
+      .container { max-width: 100%; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="ll-header"></div>
+
+<main class="container">
+  <header class="page-header">
+    <h1>GDPR Study Map for CIPP/E</h1>
+    <p class="subtitle">A surgical study architecture distilling GDPR to exam-critical doctrine. Five layers, minimal surface area, maximum scoring potential.</p>
+  </header>
+
+  <nav class="nav">
+    <button class="nav-btn active" data-layer="spine">Layer 1: The Spine</button>
+    <button class="nav-btn" data-layer="clusters">Layer 2: Doctrine Clusters</button>
+    <button class="nav-btn" data-layer="articles">Layer 3: High-Yield Articles</button>
+    <button class="nav-btn" data-layer="scaffolds">Layer 4: Cognitive Scaffolds</button>
+    <button class="nav-btn" data-layer="exam">Layer 5: Exam Translation</button>
+  </nav>
+
+  <!-- Layer 1: The Spine -->
+  <section class="layer active" id="spine">
+    <div class="layer-header">
+                <div class="layer-number">Layer 1</div>
+                <h2>The Spine: Non-Negotiables</h2>
+                <p class="layer-desc">Six structural pillars that anchor 80% of CIPP/E questions. Everything else is commentary.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-label">Pillar 1</div>
+                    <h3>Processing Principles</h3>
+                    <p>The Article 5 principles are not aspirational—they are legally binding obligations with direct enforcement consequences.</p>
+                    <div class="card-articles">Art. 5(1)(a)–(f), 5(2)</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> Every processing scenario question requires you to identify which principle is at issue.</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pillar 2</div>
+                    <h3>Lawful Basis Architecture</h3>
+                    <p>Processing requires exactly one basis from Article 6(1). Consent is just one option—and often the wrong one.</p>
+                    <div class="card-articles">Art. 6(1)(a)–(f), Art. 7, Art. 9</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> Questions test whether you can select the correct basis and explain why alternatives fail.</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pillar 3</div>
+                    <h3>Data Subject Rights</h3>
+                    <p>Eight rights with specific trigger conditions, exceptions, and timing requirements. Not all apply in all circumstances.</p>
+                    <div class="card-articles">Art. 12–22</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> Case studies frequently test when rights apply, when they can be refused, and time limits.</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pillar 4</div>
+                    <h3>Controller–Processor Mechanics</h3>
+                    <p>Controller determines purposes and means. Processor acts on instructions. The distinction drives liability allocation.</p>
+                    <div class="card-articles">Art. 4(7)–(8), Art. 26, Art. 28</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> Role identification questions appear in nearly every case study.</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pillar 5</div>
+                    <h3>Accountability Framework</h3>
+                    <p>GDPR shifted from "notify and forget" to "demonstrate compliance." Records, DPIAs, DPOs, and breach notification operationalise this.</p>
+                    <div class="card-articles">Art. 24, 25, 30, 32–36, 37–39</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> The exam tests when accountability measures are mandatory vs. advisable.</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pillar 6</div>
+                    <h3>Enforcement & Remedies</h3>
+                    <p>Two-tier fine structure, supervisory authority powers, and data subject remedies. Know the fine thresholds and triggers.</p>
+                    <div class="card-articles">Art. 58, 77–84</div>
+                    <div class="exam-critical"><strong>Why exam-critical:</strong> Questions test which violations attract €10M/2% vs €20M/4% fines.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layer 2: Doctrine Clusters -->
+        <section class="layer" id="clusters">
+            <div class="layer-header">
+                <div class="layer-number">Layer 2</div>
+                <h2>Doctrine Clusters</h2>
+                <p class="layer-desc">Mental models that match how the exam tests thinking, not how the Regulation is organised.</p>
+            </div>
+
+            <div class="cluster-card">
+                <div class="cluster-number">1</div>
+                <h3 class="cluster-title">Lawful Processing Logic</h3>
+                <p class="cluster-articles">Art. 5, 6, 7, 9, 10 | Recitals 32, 39–47</p>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Core Logic</div>
+                    <ul>
+                        <li>Every processing activity must satisfy at least one Art. 6(1) basis</li>
+                        <li>Consent requires all four elements: freely given, specific, informed, unambiguous</li>
+                        <li>Legitimate interest requires three-part balancing test</li>
+                        <li>Special category data requires Art. 6 basis + Art. 9(2) exception</li>
+                    </ul>
+                </div>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Exam Traps</div>
+                    <ul>
+                        <li>Consent bundled with other terms = not freely given (Art. 7(4))</li>
+                        <li>Pre-ticked boxes = not valid consent (Recital 32)</li>
+                        <li>Public authorities cannot rely on legitimate interest (Art. 6(1) final sentence)</li>
+                        <li>Legitimate interest test is not satisfied by controller simply asserting it</li>
+                    </ul>
+                </div>
+                <div class="golden-rule"><strong>Golden Rule:</strong> If you cannot identify the specific legal basis, the processing is unlawful. There is no "general reasonableness" exception.</div>
+            </div>
+
+            <div class="cluster-card">
+                <div class="cluster-number">2</div>
+                <h3 class="cluster-title">Rights Trigger Conditions</h3>
+                <p class="cluster-articles">Art. 12–22 | Recitals 58–73</p>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Core Logic</div>
+                    <ul>
+                        <li>Access, rectification, restriction: available in all circumstances</li>
+                        <li>Erasure: only when specific Art. 17(1) grounds are met</li>
+                        <li>Portability: only for consent-based or contract-based automated processing</li>
+                        <li>Object: only for Art. 6(1)(e)/(f) processing; absolute for direct marketing</li>
+                        <li>Automated decision-making protection: applies when solely automated + legal/significant effects</li>
+                    </ul>
+                </div>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Exam Traps</div>
+                    <ul>
+                        <li>Portability does not apply to legitimate interest processing</li>
+                        <li>Erasure is not absolute—retention may be required for legal claims (Art. 17(3)(e))</li>
+                        <li>"Without undue delay" for access = one month, extendable by two (Art. 12(3))</li>
+                        <li>Right to object to profiling ≠ right against automated decision-making</li>
+                    </ul>
+                </div>
+                <div class="golden-rule"><strong>Golden Rule:</strong> Before applying a right, verify: (1) the legal basis, (2) specific trigger conditions, and (3) applicable exceptions.</div>
+            </div>
+
+            <div class="cluster-card">
+                <div class="cluster-number">3</div>
+                <h3 class="cluster-title">Risk & Accountability Loop</h3>
+                <p class="cluster-articles">Art. 24, 25, 30, 32–36, 37–39 | Recitals 74–91</p>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Core Logic</div>
+                    <ul>
+                        <li>Risk-based approach: obligations scale with processing risk</li>
+                        <li>Accountability = ability to demonstrate compliance (Art. 5(2))</li>
+                        <li>Privacy by design = technical measures at determination stage (Art. 25(1))</li>
+                        <li>Privacy by default = minimum data by default (Art. 25(2))</li>
+                        <li>DPIA required when "high risk" to rights and freedoms (Art. 35(1))</li>
+                    </ul>
+                </div>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Exam Traps</div>
+                    <ul>
+                        <li>Records of processing (Art. 30) required for most organizations—<250 employee exemption has three broad exceptions</li>
+                        <li>DPIA is mandatory for systematic profiling, large-scale special category data, systematic monitoring</li>
+                        <li>Prior consultation (Art. 36) only after DPIA shows residual high risk</li>
+                        <li>DPO appointment is mandatory only in three specific circumstances (Art. 37(1))</li>
+                    </ul>
+                </div>
+                <div class="golden-rule"><strong>Golden Rule:</strong> When unsure if a measure is required, default to "yes" if processing involves systematic evaluation of individuals or large-scale special categories.</div>
+            </div>
+
+            <div class="cluster-card">
+                <div class="cluster-number">4</div>
+                <h3 class="cluster-title">International Transfers Decision Tree</h3>
+                <p class="cluster-articles">Art. 44–49 | Recitals 101–116</p>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Core Logic</div>
+                    <ul>
+                        <li>Any transfer to third country/international org must have valid mechanism</li>
+                        <li>Hierarchy: adequacy decision → appropriate safeguards → derogations</li>
+                        <li>SCCs and BCRs are "appropriate safeguards" not requiring additional authorisation</li>
+                        <li>Derogations (Art. 49) are narrowly construed and require case-by-case justification</li>
+                    </ul>
+                </div>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Exam Traps</div>
+                    <ul>
+                        <li>Adequacy decisions are Commission acts—not controller self-assessments</li>
+                        <li>SCCs require assessment of third country legal framework (Schrems II)</li>
+                        <li>Explicit consent for transfer requires genuine choice and information about risks</li>
+                        <li>Contractual necessity derogation applies only to specific contracts, not general operations</li>
+                    </ul>
+                </div>
+                <div class="golden-rule"><strong>Golden Rule:</strong> First check adequacy. If no adequacy, require safeguards + supplementary measures assessment. Derogations are last resort.</div>
+            </div>
+
+            <div class="cluster-card">
+                <div class="cluster-number">5</div>
+                <h3 class="cluster-title">Enforcement & Remedies Architecture</h3>
+                <p class="cluster-articles">Art. 51–59, 77–84 | Recitals 117–152</p>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Core Logic</div>
+                    <ul>
+                        <li>Each Member State has independent supervisory authority</li>
+                        <li>Lead supervisory authority for cross-border processing = main establishment location</li>
+                        <li>Data subjects: complaint to SA, judicial remedy against SA, judicial remedy against controller/processor</li>
+                        <li>Two-tier fines: €10M/2% for procedural violations; €20M/4% for substantive violations</li>
+                    </ul>
+                </div>
+                <div class="cluster-section">
+                    <div class="cluster-section-title">Exam Traps</div>
+                    <ul>
+                        <li>Main establishment = place of central administration, not largest office</li>
+                        <li>Fine tiers are maximums, not automatic amounts</li>
+                        <li>Data subject can sue in habitual residence OR controller's establishment (Art. 79(2))</li>
+                        <li>Processor liability is limited to processor-specific obligations (Art. 82(2))</li>
+                    </ul>
+                </div>
+                <div class="golden-rule"><strong>Golden Rule:</strong> €20M/4% tier = core principles, legal bases, data subject rights, international transfers. €10M/2% tier = everything else.</div>
+            </div>
+        </section>
+
+        <!-- Layer 3: High-Yield Articles -->
+        <section class="layer" id="articles">
+            <div class="layer-header">
+                <div class="layer-number">Layer 3</div>
+                <h2>High-Yield Articles</h2>
+                <p class="layer-desc">Tiered by exam frequency and scoring impact. Tier 1 articles appear in 70%+ of exams.</p>
+            </div>
+
+            <div class="tier-section">
+                <div class="tier-header">
+                    <span class="tier-badge tier1">Tier 1</span>
+                    <span class="tier-title">Know Cold</span>
+                </div>
+                <p class="tier-desc">Memorise elements, sub-parts, and inter-relationships. Tested directly and indirectly in nearly every exam.</p>
+                <div class="article-list">
+                    <div class="article-tag tier1">Art. 4 — Definitions (1–8, 11, 12)</div>
+                    <div class="article-tag tier1">Art. 5 — Processing Principles</div>
+                    <div class="article-tag tier1">Art. 6 — Lawful Basis</div>
+                    <div class="article-tag tier1">Art. 7 — Consent Conditions</div>
+                    <div class="article-tag tier1">Art. 9 — Special Categories</div>
+                    <div class="article-tag tier1">Art. 12 — Transparency</div>
+                    <div class="article-tag tier1">Art. 13 — Info: Direct Collection</div>
+                    <div class="article-tag tier1">Art. 14 — Info: Indirect Collection</div>
+                    <div class="article-tag tier1">Art. 15 — Access</div>
+                    <div class="article-tag tier1">Art. 17 — Erasure</div>
+                    <div class="article-tag tier1">Art. 20 — Portability</div>
+                    <div class="article-tag tier1">Art. 21 — Object</div>
+                    <div class="article-tag tier1">Art. 22 — Automated Decisions</div>
+                    <div class="article-tag tier1">Art. 28 — Processor</div>
+                    <div class="article-tag tier1">Art. 33 — Breach: SA Notification</div>
+                    <div class="article-tag tier1">Art. 34 — Breach: DS Communication</div>
+                    <div class="article-tag tier1">Art. 35 — DPIA</div>
+                    <div class="article-tag tier1">Art. 37 — DPO Designation</div>
+                    <div class="article-tag tier1">Art. 44–46 — Transfers Basis</div>
+                    <div class="article-tag tier1">Art. 83 — Fines</div>
+                </div>
+            </div>
+
+            <div class="tier-section">
+                <div class="tier-header">
+                    <span class="tier-badge tier2">Tier 2</span>
+                    <span class="tier-title">Know Functionally</span>
+                </div>
+                <p class="tier-desc">Understand purpose, key requirements, and relationship to Tier 1. Tested in context.</p>
+                <div class="article-list">
+                    <div class="article-tag tier2">Art. 3 — Territorial Scope</div>
+                    <div class="article-tag tier2">Art. 8 — Child Consent</div>
+                    <div class="article-tag tier2">Art. 16 — Rectification</div>
+                    <div class="article-tag tier2">Art. 18 — Restriction</div>
+                    <div class="article-tag tier2">Art. 19 — Notification</div>
+                    <div class="article-tag tier2">Art. 24 — Controller Responsibility</div>
+                    <div class="article-tag tier2">Art. 25 — Privacy by Design</div>
+                    <div class="article-tag tier2">Art. 26 — Joint Controllers</div>
+                    <div class="article-tag tier2">Art. 27 — Representatives</div>
+                    <div class="article-tag tier2">Art. 30 — Records</div>
+                    <div class="article-tag tier2">Art. 32 — Security</div>
+                    <div class="article-tag tier2">Art. 36 — Prior Consultation</div>
+                    <div class="article-tag tier2">Art. 38–39 — DPO Position/Tasks</div>
+                    <div class="article-tag tier2">Art. 47 — BCRs</div>
+                    <div class="article-tag tier2">Art. 49 — Derogations</div>
+                    <div class="article-tag tier2">Art. 58 — SA Powers</div>
+                    <div class="article-tag tier2">Art. 77–79 — Remedies</div>
+                    <div class="article-tag tier2">Art. 82 — Compensation</div>
+                </div>
+            </div>
+
+            <div class="tier-section">
+                <div class="tier-header">
+                    <span class="tier-badge tier3">Tier 3</span>
+                    <span class="tier-title">Context Only</span>
+                </div>
+                <p class="tier-desc">Know they exist and general purpose. Rarely tested directly.</p>
+                <div class="article-list">
+                    <div class="article-tag tier3">Art. 1–2 — Subject Matter/Scope</div>
+                    <div class="article-tag tier3">Art. 10 — Criminal Data</div>
+                    <div class="article-tag tier3">Art. 11 — No ID Required</div>
+                    <div class="article-tag tier3">Art. 23 — Restrictions</div>
+                    <div class="article-tag tier3">Art. 29 — Processor Authority</div>
+                    <div class="article-tag tier3">Art. 31 — SA Cooperation</div>
+                    <div class="article-tag tier3">Art. 40–43 — Codes/Certification</div>
+                    <div class="article-tag tier3">Art. 48 — Non-EU Orders</div>
+                    <div class="article-tag tier3">Art. 50 — International Cooperation</div>
+                    <div class="article-tag tier3">Art. 51–57 — SA Establishment</div>
+                    <div class="article-tag tier3">Art. 60–76 — Cooperation/EDPB</div>
+                    <div class="article-tag tier3">Art. 80–81 — Representation</div>
+                    <div class="article-tag tier3">Art. 84–91 — Specific Processing</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layer 4: Cognitive Scaffolds -->
+        <section class="layer" id="scaffolds">
+            <div class="layer-header">
+                <div class="layer-number">Layer 4</div>
+                <h2>Cognitive Scaffolds</h2>
+                <p class="layer-desc">Memory devices for rapid retrieval under exam pressure. Precision over cleverness.</p>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">Decision Tree: Legal Basis Selection</h3>
+                <div class="decision-tree"><span class="q">Q1: Is this special category data (Art. 9(1))?</span>
+   <span class="y">YES →</span> Must satisfy BOTH Art. 6(1) basis AND Art. 9(2) exception
+   <span class="n">NO →</span> Continue to Q2
+
+<span class="q">Q2: Is the controller a public authority performing public tasks?</span>
+   <span class="y">YES →</span> <span class="result">Art. 6(1)(e) — public task/official authority</span>
+         [Cannot use legitimate interest]
+   <span class="n">NO →</span> Continue to Q3
+
+<span class="q">Q3: Is there a contract with the data subject requiring this processing?</span>
+   <span class="y">YES →</span> <span class="result">Art. 6(1)(b) — contractual necessity</span>
+         [Must be genuinely necessary, not merely useful]
+   <span class="n">NO →</span> Continue to Q4
+
+<span class="q">Q4: Is processing required by law?</span>
+   <span class="y">YES →</span> <span class="result">Art. 6(1)(c) — legal obligation</span>
+   <span class="n">NO →</span> Continue to Q5
+
+<span class="q">Q5: Does controller have legitimate interest that isn't overridden?</span>
+   <span class="y">YES →</span> <span class="result">Art. 6(1)(f) — legitimate interest</span>
+         [Requires documented balancing test]
+   <span class="n">NO →</span> Continue to Q6
+
+<span class="q">Q6: Can valid consent be obtained?</span>
+   <span class="y">YES →</span> <span class="result">Art. 6(1)(a) — consent</span>
+         [Must be freely given, specific, informed, unambiguous]
+   <span class="n">NO →</span> <span class="result">Processing likely unlawful</span></div>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">Decision Tree: DPIA Requirement</h3>
+                <div class="decision-tree"><span class="q">Q1: Is this on the supervisory authority's mandatory DPIA list?</span>
+   <span class="y">YES →</span> <span class="result">DPIA REQUIRED</span>
+   <span class="n">NO →</span> Continue to Q2
+
+<span class="q">Q2: Does processing involve ANY of these Art. 35(3) activities?</span>
+   • Systematic & extensive profiling with significant effects
+   • Large-scale special category data (Art. 9) or criminal data (Art. 10)
+   • Systematic large-scale monitoring of publicly accessible areas
+   
+   <span class="y">YES →</span> <span class="result">DPIA REQUIRED</span>
+   <span class="n">NO →</span> Continue to Q3
+
+<span class="q">Q3: Does processing involve 2+ of these high-risk factors?</span>
+   • Evaluation/scoring  • Automated decisions  • Systematic monitoring
+   • Sensitive data  • Large scale  • Dataset matching
+   • Vulnerable subjects  • Innovative technology  • Transfer blocks
+   
+   <span class="y">YES →</span> <span class="result">DPIA LIKELY REQUIRED</span>
+   <span class="n">NO →</span> <span class="result">DPIA not mandatory (but may be advisable)</span></div>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">Decision Tree: Breach Notification</h3>
+                <div class="decision-tree"><span class="q">BREACH DETECTED: Has there been accidental or unlawful destruction, loss,
+alteration, unauthorised disclosure of, or access to personal data?</span>
+
+<span class="q">Step 1: Notify Supervisory Authority? (Art. 33)</span>
+   Default: YES, within 72 hours from awareness
+   Exception: "unlikely to result in a risk to rights and freedoms"
+   <span class="result">→ If in doubt, NOTIFY</span>
+
+<span class="q">Step 2: Notify Data Subject? (Art. 34)</span>
+   Only if: "likely to result in HIGH risk to rights and freedoms"
+   Exceptions:
+   • Encryption rendered data unintelligible
+   • Subsequent measures eliminated the high risk
+   • Disproportionate effort (then: public communication)
+   <span class="result">→ High risk threshold is higher than SA notification threshold</span>
+
+<span class="result">KEY TIMING:</span>
+   • SA notification: 72 hours from awareness
+   • Data subject: "without undue delay"
+   • Processor → Controller: "without undue delay" (no 72-hour limit)</div>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">Comparison: Controller vs Processor</h3>
+                <table class="comparison-table">
+                    <thead><tr><th>Criterion</th><th>Controller</th><th>Processor</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Definition</strong></td><td>Determines purposes AND means</td><td>Processes on behalf of controller</td></tr>
+                        <tr><td><strong>Key Question</strong></td><td>"Why and how?"</td><td>"As instructed?"</td></tr>
+                        <tr><td><strong>Legal Basis</strong></td><td>Must establish</td><td>Relies on controller's</td></tr>
+                        <tr><td><strong>Data Subject Rights</strong></td><td>Primary responsibility</td><td>Assist controller</td></tr>
+                        <tr><td><strong>Records (Art. 30)</strong></td><td>Full records required</td><td>Categories only</td></tr>
+                        <tr><td><strong>Breach Notification</strong></td><td>To SA (72 hrs) + DS if high risk</td><td>To controller only</td></tr>
+                        <tr><td><strong>DPIA</strong></td><td>Must conduct</td><td>Assist controller</td></tr>
+                        <tr><td><strong>Liability (Art. 82)</strong></td><td>All infringements</td><td>Processor-specific + acting outside instructions</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">Data Subject Rights by Legal Basis</h3>
+                <table class="comparison-table">
+                    <thead><tr><th>Right</th><th>Consent</th><th>Contract</th><th>Legal Obl</th><th>Public Task</th><th>Legit Int</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Access (15)</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                        <tr><td><strong>Rectification (16)</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                        <tr><td><strong>Erasure (17)</strong></td><td>✓</td><td>✓</td><td>Limited</td><td>Limited</td><td>✓</td></tr>
+                        <tr><td><strong>Restriction (18)</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                        <tr><td><strong>Portability (20)</strong></td><td>✓</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr>
+                        <tr><td><strong>Object (21)</strong></td><td>N/A*</td><td>N/A*</td><td>N/A*</td><td>✓</td><td>✓</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">* Right to object only applies to Art. 6(1)(e)/(f). For consent, withdrawal achieves same result.</p>
+            </div>
+
+            <div class="scaffold-card">
+                <h3 class="scaffold-title">International Transfers: Mechanism Hierarchy</h3>
+                <div class="decision-tree"><span class="result">LEVEL 1: ADEQUACY DECISION (Art. 45)</span>
+   → Commission determines adequate protection
+   → No additional authorisation required
+
+<span class="result">LEVEL 2: APPROPRIATE SAFEGUARDS (Art. 46)</span>
+   No prior SA authorisation:
+   • Standard Contractual Clauses (SCCs)
+   • Binding Corporate Rules (BCRs)
+   • Approved codes of conduct + binding commitments
+   • Approved certification + binding commitments
+   
+   <span class="q">POST-SCHREMS II: Assess effectiveness in light of third country law.
+   Supplementary measures may be required.</span>
+
+<span class="result">LEVEL 3: DEROGATIONS (Art. 49) — NARROW, CASE-BY-CASE</span>
+   • Explicit consent (informed of risks)
+   • Contract with/for data subject necessity
+   • Important public interest
+   • Legal claims / Vital interests
+   • Public register
+   • Compelling legitimate interest (residual only, notify SA)</div>
+            </div>
+        </section>
+
+        <!-- Layer 5: Exam Translation -->
+        <section class="layer" id="exam">
+            <div class="layer-header">
+                <div class="layer-number">Layer 5</div>
+                <h2>Exam Translation Layer</h2>
+                <p class="layer-desc">How doctrine shows up in questions, common distractors, and over-memorisation traps.</p>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 1: Legal Basis Selection</h4>
+                <p>Scenario presented; asks which legal basis applies. Distractors are bases that seem plausible but fail technically.</p>
+                <div class="distractor"><strong>Distractor:</strong> "Consent" when there's power imbalance (employment) or service dependency.</div>
+                <div class="distractor"><strong>Distractor:</strong> "Legitimate interest" when controller is public authority performing public tasks.</div>
+                <div class="correct"><strong>Approach:</strong> Systematically eliminate. Public authority? Contract? Legal obligation? Only then consent/legitimate interest.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 2: Consent Validity</h4>
+                <p>Describes consent mechanism; asks if valid. Tests four cumulative requirements.</p>
+                <div class="distractor"><strong>Distractor:</strong> "Valid because user clicked agree" — ignores pre-ticked boxes, bundled terms, power imbalances.</div>
+                <div class="distractor"><strong>Distractor:</strong> "Valid because opt-out available" — consent requires affirmative action.</div>
+                <div class="correct"><strong>Approach:</strong> Test all four: Freely given? Specific? Informed? Unambiguous affirmative action?</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 3: Data Subject Rights</h4>
+                <p>Right exercise request; asks whether controller must comply and timing.</p>
+                <div class="distractor"><strong>Distractor:</strong> "Portability applies" when basis is legitimate interest (only consent/contract).</div>
+                <div class="distractor"><strong>Distractor:</strong> "Erasure is absolute" when data needed for legal claims.</div>
+                <div class="correct"><strong>Approach:</strong> (1) Identify legal basis. (2) Check if right applies. (3) Check exceptions. (4) Apply timing.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 4: Controller vs Processor</h4>
+                <p>Multi-party arrangement; asks who is controller, processor, joint controller.</p>
+                <div class="distractor"><strong>Distractor:</strong> "Larger company is controller" — size irrelevant; purposes/means decisive.</div>
+                <div class="distractor"><strong>Distractor:</strong> "Cloud provider is joint controller" — infrastructure typically = processor.</div>
+                <div class="correct"><strong>Approach:</strong> Who decided WHY? Who decided HOW? Jointly = joint controllers. On instructions = processor.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 5: Breach Notification</h4>
+                <p>Data breach described; asks about notification obligations and timing.</p>
+                <div class="distractor"><strong>Distractor:</strong> "72 hours from breach" — it's 72 hours from awareness.</div>
+                <div class="distractor"><strong>Distractor:</strong> "Always notify data subjects" — only HIGH risk (different from SA threshold).</div>
+                <div class="correct"><strong>Approach:</strong> SA = default 72 hrs from awareness. DS = only HIGH risk, check exceptions.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 6: International Transfers</h4>
+                <p>Data flow to third country; asks about valid transfer mechanisms.</p>
+                <div class="distractor"><strong>Distractor:</strong> "Consent covers all transfers" — can't use for systematic transfers.</div>
+                <div class="distractor"><strong>Distractor:</strong> "SCCs always sufficient" — must assess third country law (Schrems II).</div>
+                <div class="correct"><strong>Approach:</strong> (1) Check adequacy. (2) If none → safeguards + assessment. (3) Derogations narrow.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Pattern 7: Fine Tiers</h4>
+                <p>Violation described; asks maximum fine tier.</p>
+                <div class="distractor"><strong>Distractor:</strong> "All violations = €20M/4%" — procedural violations are lower tier.</div>
+                <div class="correct"><strong>Approach:</strong> €20M/4% = Art. 5–9, 12–22, 44–49. €10M/2% = Art. 25–39, 42–43.</div>
+            </div>
+
+            <div class="exam-card">
+                <h4>Over-Memorisation Traps</h4>
+                <p>Where candidates memorise details but miss exam-tested logic.</p>
+                <div class="distractor"><strong>Trap:</strong> Memorising Recital numbers — exam tests doctrine, not citations.</div>
+                <div class="distractor"><strong>Trap:</strong> Memorising complete Article text — exam tests application.</div>
+                <div class="distractor"><strong>Trap:</strong> Memorising every adequacy country — exam tests mechanism hierarchy.</div>
+                <div class="correct"><strong>Better:</strong> Understand the logic. Why does GDPR require this? When does it apply? What are conditions and exceptions?</div>
+            </div>
+        </section>
+
+</main>
+
+<div id="ll-footer" data-source="gdpr-study-map"></div>
+
+<script>
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+      document.getElementById(this.dataset.layer).classList.add('active');
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
