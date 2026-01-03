@@ -95,6 +95,12 @@
       letter-spacing: -0.02em;
     }
 
+    /* How to Use */
+    .how-to-use { margin-bottom: 2rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-alt); }
+    .how-to-use summary { padding: 1rem 1.25rem; font-weight: 600; cursor: pointer; color: var(--accent-blue); }
+    .how-to-use ol { padding: 0 1.25rem 1.25rem 2.5rem; }
+    .how-to-use li { margin-bottom: 0.5rem; }
+
     /* Navigation tabs */
     .nav { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
     .nav-btn {
@@ -209,6 +215,17 @@
     <h1>GDPR Study Map for CIPP/E</h1>
     <p class="subtitle">A surgical study architecture distilling GDPR to exam-critical doctrine. Five layers, minimal surface area, maximum scoring potential.</p>
   </header>
+
+  <details class="how-to-use">
+    <summary>How to Use This Map</summary>
+    <ol>
+      <li><strong>First pass (2–3 hrs):</strong> Read Layers 1–2. Build the mental map—don't memorize yet.</li>
+      <li><strong>Deep dive (8–10 hrs):</strong> Layer 3, Tier 1 articles only. Test yourself: can you explain each without looking?</li>
+      <li><strong>Application (4–6 hrs):</strong> Layer 4 decision trees. Walk through with hypothetical scenarios.</li>
+      <li><strong>Exam prep (2–3 hrs):</strong> Layer 5 patterns. For each, write 2–3 practice questions.</li>
+      <li><strong>Revision:</strong> Return to Layer 2 Golden Rules before each practice exam.</li>
+    </ol>
+  </details>
 
   <nav class="nav">
     <button class="nav-btn active" data-layer="spine">Layer 1: The Spine</button>
