@@ -195,11 +195,9 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 
 <div id="ll-header"></div>
 
-<div class="container">
 <div class="header">
   <h1>Court Observation Tool</h1>
   <p class="subtitle">Structured court observation templates for Australian courts — grounded in cognitive load theory, deliberate practice, and generative learning research. Two templates, one worked example, one session protocol.</p>
-</div>
 </div>
 
 <div class="nav">
@@ -215,7 +213,7 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 <!-- ═══════════ TEMPLATE ═══════════ -->
 <div class="section active" id="template">
   <h2 class="section-title">The Observation Template</h2>
-  <p class="section-sub">Nine active capture fields, designed for a single A5 page. Each field forces generative processing — you summarise and transform, rather than transcribe. The template constrains attention within working memory limits while anchoring observations to doctrinal structures that transfer to exam performance.</p>
+  <p class="section-sub">Nine active capture fields, designed for a single A4 or A5 page (A5 is better for taking notes in a court setting). Each field forces generative processing — you summarise and transform, rather than transcribe. The template constrains attention within working memory limits while anchoring observations to doctrinal structures that transfer to exam performance.</p>
 
   <div class="template-mock" data-label="Print-ready · A4 / A5 · Pen only">
     <div class="tmpl-page">
@@ -287,10 +285,28 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
 
   <h3 style="font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.1rem; margin: 2rem 0 0.75rem;">Field Design Rationale</h3>
-  <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;"><strong>Issue & Test</strong> — The "governing legal test in my wording" field is the highest-value prompt on the page. It forces you to articulate the controlling test during the hearing, which is the exact cognitive operation exam answers require. This is generative encoding targeted at transfer.</p>
-  <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;"><strong>Authority Hierarchy</strong> — Noticing whether counsel leads with High Court authority, Federal Court, statutory text, or policy is a pattern-recognition skill that reveals strategic choices. It changes what you attend to, not just what you record.</p>
-  <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;"><strong>Judicial Intervention</strong> — Classifying each intervention as clarification, challenge, or steering trains you to read the bench. This is where most of the hearing's real information lives.</p>
-  <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;"><strong>Post-Hearing Synthesis</strong> — Compressed to two questions to enforce selection. Choosing one technique and one insight is itself a generative act — it forces evaluation, not just recall.</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); border-radius: 4px; padding: 1.1rem 1.3rem;">
+      <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Issue & Test</h4>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65;">The "governing legal test in my wording" field is the highest-value prompt on the page. It forces you to articulate the controlling test during the hearing, which is the exact cognitive operation exam answers require. This is generative encoding targeted at transfer.</p>
+    </div>
+    
+    <div style="background: var(--surface); border-left: 3px solid var(--blue); border-radius: 4px; padding: 1.1rem 1.3rem;">
+      <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--blue); margin-bottom: 0.5rem;">Authority Hierarchy</h4>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65;">Noticing whether counsel leads with High Court authority, Federal Court, statutory text, or policy is a pattern-recognition skill that reveals strategic choices. It changes what you attend to, not just what you record.</p>
+    </div>
+    
+    <div style="background: var(--surface); border-left: 3px solid var(--green); border-radius: 4px; padding: 1.1rem 1.3rem;">
+      <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--green); margin-bottom: 0.5rem;">Judicial Intervention</h4>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65;">Classifying each intervention as clarification, challenge, or steering trains you to read the bench. This is where most of the hearing's real information lives.</p>
+    </div>
+    
+    <div style="background: var(--surface); border-left: 3px solid #d97706; border-radius: 4px; padding: 1.1rem 1.3rem;">
+      <h4 style="font-size: 0.875rem; font-weight: 600; color: #d97706; margin-bottom: 0.5rem;">Post-Hearing Synthesis</h4>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65;">Compressed to two questions to enforce selection. Choosing one technique and one insight is itself a generative act — it forces evaluation, not just recall.</p>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════ SINGLE-FOCUS ═══════════ -->
@@ -342,18 +358,86 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <a href="single-focus-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
   <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
 
-  <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; margin-top: 1.5rem;">The constraint is the mechanism. By limiting observation to a single question, extraneous cognitive load drops to near zero, freeing all processing capacity for the deep pattern recognition that builds expertise. The "Surprise / Exception" field provides a release valve for critical off-focus observations without abandoning the single-lens discipline. The debrief question — "What would I test next time?" — creates a forward-chaining practice cycle that compounds across visits.</p>
+  <div class="callout callout-blue" style="margin-top: 1.5rem;">
+    <div class="callout-label">Theoretical Foundation</div>
+    <p>This approach applies <strong>professional vision theory</strong> (Goodwin, 1994) and <strong>deliberate practice principles</strong> (Ericsson, 2008) to court observation. Each question isolates a single dimension of advocacy expertise, reducing cognitive load while building pattern recognition skills that transfer to practice.</p>
+  </div>
 
-  <h3 style="font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.1rem; margin: 2rem 0 0.75rem;">Focus Question Bank</h3>
-  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">The first three questions provide entry-level scaffolding. After that, generate your own from each session's debrief. Observe the same question across two to three different hearings before switching — different judges and counsel reveal whether a pattern is universal or contextual.</p>
+  <h3 style="font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.1rem; margin: 2.5rem 0 0.75rem;">Focus Question Bank</h3>
+  
+  <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+      <div style="font-size: 1.5rem; line-height: 1;">📋</div>
+      <div>
+        <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.35rem;">Progression Protocol</h4>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">Use each scaffolded question for 2–3 hearings (different judges/counsel). After 3 uses, generate your own question targeting a pattern you noticed. Test self-generated questions across 2 hearings before switching. <em>Research shows expertise develops through repeated observation of the same dimension across varied contexts.</em></p>
+      </div>
+    </div>
+  </div>
 
   <div class="focus-grid">
-    <div class="focus-card"><div class="focus-visit">Scaffolded</div><h4>Counsel Introduction & Framing</h4><p>How do counsel introduce themselves, frame the issue, and establish position in the first 90 seconds?</p></div>
-    <div class="focus-card"><div class="focus-visit">Scaffolded</div><h4>Judicial Time Management</h4><p>How does the judge manage pace, allocate speaking time, and signal that counsel should move on?</p></div>
-    <div class="focus-card"><div class="focus-visit">Scaffolded</div><h4>Authority Citation Method</h4><p>Quote, paraphrase, or summarise? How long per case? What hierarchy? How does the judge test it?</p></div>
-    <div class="focus-card"><div class="focus-visit">Self-generated</div><h4>Recovery After Interruption</h4><p>What does counsel do in the 10 seconds after being cut off by the bench?</p></div>
-    <div class="focus-card"><div class="focus-visit">Self-generated</div><h4>Concession Strategy</h4><p>When and how does counsel concede a point? What's yielded? What's preserved?</p></div>
-    <div class="focus-card"><div class="focus-visit">Self-generated</div><h4>Statutory Interpretation Live</h4><p>How does counsel introduce, read, and apply a statutory provision in real time?</p></div>
+    <div class="focus-card" style="border-left: 3px solid var(--accent);">
+      <div class="focus-visit">Scaffolded</div>
+      <h4>Argument Structure & Roadmapping</h4>
+      <p>How does counsel organize their submission? What's stated upfront vs. held back? How does the roadmap match actual delivery?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ Why might this structure work/fail for this judge?</div>
+    </div>
+    
+    <div class="focus-card" style="border-left: 3px solid var(--accent);">
+      <div class="focus-visit">Scaffolded</div>
+      <h4>Authority Deployment Strategy</h4>
+      <p>When does counsel cite authority? Quote vs. paraphrase? How does the judge respond to different citation styles?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ How does this connect to the legal test being argued?</div>
+    </div>
+    
+    <div class="focus-card" style="border-left: 3px solid var(--accent);">
+      <div class="focus-visit">Scaffolded</div>
+      <h4>Judicial Signal Reading</h4>
+      <p>What verbal/non-verbal cues does the judge give about receptiveness? When does counsel adjust based on these signals?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ What strategic choices does this reveal?</div>
+    </div>
+    
+    <div class="focus-card" style="border-left: 3px solid var(--blue);">
+      <div class="focus-visit">Self-generated</div>
+      <h4>Recovery After Interruption</h4>
+      <p>What does counsel do in the 10 seconds after being cut off by the bench?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ Why might this strategy work/fail?</div>
+    </div>
+    
+    <div class="focus-card" style="border-left: 3px solid var(--blue);">
+      <div class="focus-visit">Self-generated</div>
+      <h4>Concession Strategy</h4>
+      <p>When and how does counsel concede a point? What's yielded? What's preserved?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ How does this connect to their overall position?</div>
+    </div>
+    
+    <div class="focus-card" style="border-left: 3px solid var(--blue);">
+      <div class="focus-visit">Self-generated</div>
+      <h4>Statutory Interpretation Live</h4>
+      <p>How does counsel introduce, read, and apply a statutory provision in real time?</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">→ What interpretive moves are being made?</div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, var(--accent-bg) 0%, rgba(74, 144, 226, 0.06) 100%); border: 1px solid var(--accent-border); border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
+    <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--accent);">Generating Effective Focus Questions</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; font-size: 0.8125rem;">
+      <div>
+        <div style="color: var(--green); margin-bottom: 0.25rem;">✓ Targets a specific skill dimension</div>
+        <div style="color: var(--green); margin-bottom: 0.25rem;">✓ Observable in real-time</div>
+        <div style="color: var(--green);">✓ Reveals strategic choices</div>
+      </div>
+      <div>
+        <div style="color: var(--red); margin-bottom: 0.25rem;">✗ Requires knowing case law in advance</div>
+        <div style="color: var(--red); margin-bottom: 0.25rem;">✗ About outcomes (you won't see judgment)</div>
+        <div style="color: var(--red);">✗ Too broad ("everything about opening")</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber" style="margin-top: 1.5rem;">
+    <div class="callout-label">Evidence Base</div>
+    <p>This approach applies established principles from professional vision research (teaching), deliberate practice (medicine/sports), and cognitive load theory to legal education. The specific focus questions have not been empirically validated in legal contexts. Users are encouraged to track which questions yield the most transferable insights for their own learning.</p>
   </div>
 </div>
 
@@ -440,7 +524,7 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <div class="protocol">
     <div class="pstep"><div><h4>Check the daily list</h4><p>Look for "Hearing," "Trial," "Final hearing," or "Interlocutory application" — anything estimated 1–3 hours. Avoid "Mention" or items under 30 minutes.</p></div></div>
     <div class="pstep"><div><h4>Set your focus</h4><p>If using Single-Focus, write your question before you leave. If using the Observation Template, at minimum decide: "Today I'm watching for [X]." This creates a perceptual filter that makes relevant information salient.</p></div></div>
-    <div class="pstep"><div><h4>Pack light</h4><p>A5 notebook. Black or blue pen. Spare pen. Phone on silent in bag. No laptop. That guarantees zero friction with any court.</p></div></div>
+    <div class="pstep"><div><h4>Pack light</h4><p>A4 or A5 notebook (A5 is better for taking notes in a court setting). Black or blue pen. Spare pen. Phone on silent in bag. No laptop. That guarantees zero friction with any court.</p></div></div>
   </div>
 
   <h3 style="font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.05rem; margin: 2rem 0 0.75rem; color: var(--accent);">During</h3>
