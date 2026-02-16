@@ -134,12 +134,15 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 .tmpl-header { border-bottom: 1.5px solid #2c2926; padding-bottom: 0.5rem; margin-bottom: 0.8rem; }
 .tmpl-field { display: flex; gap: 0.4rem; margin-bottom: 0.15rem; }
 .tmpl-field .lbl { color: #888; min-width: 70px; flex-shrink: 0; }
-.tmpl-field .val { border-bottom: 1px dotted #ccc; flex: 1; min-height: 1.1em; }
+.tmpl-field .val { border-bottom: 1px dotted #ccc; flex: 1; min-height: 1.1em; outline: none; }
+.tmpl-field .val:focus { background: rgba(108,99,255,0.03); border-bottom-color: var(--accent); }
 .tmpl-section { border-top: 1px solid #ddd; padding-top: 0.65rem; margin-top: 0.65rem; }
 .tmpl-section-title { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #555; margin-bottom: 0.35rem; }
 .tmpl-prompt { color: #888; font-style: italic; margin-bottom: 0.1rem; font-size: 0.68rem; }
-.tmpl-line { border-bottom: 1px dotted #ddd; height: 1.5em; }
-.tmpl-line-strong { border-bottom: 1.5px solid rgba(108,99,255,0.2); height: 1.8em; background: rgba(108,99,255,0.04); }
+.tmpl-line { border-bottom: 1px dotted #ddd; min-height: 1.5em; outline: none; }
+.tmpl-line:focus { background: rgba(108,99,255,0.03); border-bottom-color: var(--accent); }
+.tmpl-line-strong { border-bottom: 1.5px solid rgba(108,99,255,0.2); min-height: 1.8em; background: rgba(108,99,255,0.04); outline: none; }
+.tmpl-line-strong:focus { background: rgba(108,99,255,0.08); border-bottom-color: var(--accent); }
 .tmpl-annotation { font-size: 0.6rem; color: var(--accent); font-style: italic; margin-top: 0.15rem; }
 
 /* Progression */
@@ -319,48 +322,51 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <p class="section-sub">One pre-set question. Total observational depth on that question alone. This is the purest application of deliberate practice to court observation — a pre-set intention, focused execution, and structured debrief that compounds across visits.</p>
 
   <div class="template-mock" data-label="Print-ready · A4 / A5 · Single question">
-    <div class="tmpl-page">
+    <div class="tmpl-page" id="single-focus-template">
       <div class="tmpl-header">
         <div style="display:flex; gap: 0.5rem;">
-          <div class="tmpl-field" style="flex:1;"><span class="lbl">Court:</span><span class="val"></span></div>
-          <div class="tmpl-field" style="flex:0.6;"><span class="lbl">Date:</span><span class="val"></span></div>
+          <div class="tmpl-field" style="flex:1;"><span class="lbl">Court:</span><span class="val" contenteditable="true"></span></div>
+          <div class="tmpl-field" style="flex:0.6;"><span class="lbl">Date:</span><span class="val" contenteditable="true"></span></div>
         </div>
-        <div class="tmpl-field"><span class="lbl">Judge:</span><span class="val"></span></div>
+        <div class="tmpl-field"><span class="lbl">Judge:</span><span class="val" contenteditable="true"></span></div>
       </div>
 
       <div class="tmpl-section" style="border: 1.5px solid rgba(108,99,255,0.2); border-radius: 3px; padding: 0.6rem; margin-top: 0.6rem; background: rgba(108,99,255,0.04);">
         <div class="tmpl-section-title" style="color: var(--accent);">Today's Focus Question</div>
         <div class="tmpl-prompt" style="font-size: 0.64rem; color: var(--accent);">Set before entering. One question only.</div>
-        <div class="tmpl-line-strong" style="height: 2em;"></div>
+        <div class="tmpl-line-strong" style="height: 2em;" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section">
         <div class="tmpl-section-title">Observations (this lens only)</div>
-        <div class="tmpl-line"></div><div class="tmpl-line"></div><div class="tmpl-line"></div>
-        <div class="tmpl-line"></div><div class="tmpl-line"></div><div class="tmpl-line"></div>
-        <div class="tmpl-line"></div><div class="tmpl-line"></div><div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
+        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
+        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section" style="border: 1px dashed #ddd; border-radius: 3px; padding: 0.5rem; margin-top: 0.5rem;">
         <div class="tmpl-section-title" style="color: #888;">Surprise / Exception</div>
         <div class="tmpl-prompt" style="font-size: 0.62rem;">Anything critical that fell outside your focus lens.</div>
-        <div class="tmpl-line"></div><div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section" style="border-top: 1.5px solid #2c2926; margin-top: 0.6rem;">
         <div class="tmpl-section-title">Debrief (5 min)</div>
         <div class="tmpl-prompt">1. What pattern did I see?</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top:0.2rem;">2. What was the exception?</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top:0.2rem;">3. What would I test next time, or re-test in a different context?</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
       </div>
     </div>
   </div>
 
-  <a href="single-focus-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
-  <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
+  <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+    <a href="single-focus-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
+    <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
+    <button onclick="window.print()" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
+  </div>
 
   <div class="callout callout-blue" style="margin-top: 1.5rem;">
     <div class="callout-label">Theoretical Foundation</div>
