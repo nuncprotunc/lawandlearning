@@ -94,26 +94,25 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
 
 /* Header */
-.header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
-.header-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-.header h1 { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+.header { text-align: center; margin-bottom: 3rem; padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
+.header-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600; }
+.header h1 { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 2.75rem; font-weight: 600; line-height: 1.2; color: var(--text); margin-bottom: 1rem; letter-spacing: -0.02em; }
 .header h1 em { color: var(--accent); }
-.header .lead { font-size: 1.0625rem; color: var(--text-secondary); max-width: 720px; font-weight: 400; line-height: 1.75; }
+.header .lead { font-size: 1.0625rem; color: var(--text-secondary); max-width: 720px; font-weight: 400; line-height: 1.75; margin: 0 auto; }
 
 /* Nav */
-.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
-.nav::-webkit-scrollbar { display: none; }
-.nav-inner { display: flex; max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-.nav-tab { padding: 0.85rem 1.1rem; font-size: 0.78rem; font-weight: 500; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.2s; }
-.nav-tab:hover { color: var(--text-secondary); }
-.nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.nav { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.nav-inner { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.nav-tab { padding: 0.625rem 1.25rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 0.8125rem; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+.nav-tab:hover { background: #EEF2FF; border-color: var(--accent); color: var(--accent); }
+.nav-tab.active { background: #EEF2FF; border-color: var(--accent); color: var(--accent); }
 
 /* Sections */
 .section { display: none; padding: 2.5rem 0; }
 .section.active { display: block; animation: fadeUp 0.35s ease; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-.section-title { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.65rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
-.section-sub { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 680px; line-height: 1.7; }
+.section-title { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 2rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+.section-sub { font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 680px; line-height: 1.7; }
 
 /* Callouts */
 .callout { padding: 1.1rem 1.3rem; border-radius: 4px; margin: 1.25rem 0; font-size: 0.88rem; line-height: 1.6; }
@@ -210,13 +209,11 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 </div>
 
 <div class="nav">
-  <div class="nav-inner">
-    <div class="nav-tab active" data-tab="template">Template</div>
-    <div class="nav-tab" data-tab="single">Single-Focus</div>
-    <div class="nav-tab" data-tab="examples">Worked Example</div>
-    <div class="nav-tab" data-tab="protocol">Session Protocol</div>
-    <div class="nav-tab" data-tab="methodology">Methodology</div>
-  </div>
+  <div class="nav-tab active" data-tab="template">Template</div>
+  <div class="nav-tab" data-tab="single">Single-Focus</div>
+  <div class="nav-tab" data-tab="examples">Worked Example</div>
+  <div class="nav-tab" data-tab="protocol">Session Protocol</div>
+  <div class="nav-tab" data-tab="methodology">Methodology</div>
 </div>
 
 <div class="container">
