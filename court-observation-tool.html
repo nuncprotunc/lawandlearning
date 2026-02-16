@@ -189,7 +189,6 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   body.print-template-only #ll-footer,
   body.print-template-only .nav,
   body.print-template-only .header,
-  body.print-template-only .section:not(#single),
   body.print-template-only .section-title,
   body.print-template-only .section-sub,
   body.print-template-only .callout,
@@ -204,6 +203,15 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   body.print-template-only div[style*="background: var(--surface)"],
   body.print-template-only div[style*="background: linear-gradient"],
   body.print-template-only script { display: none !important; }
+
+  body.print-template-only .section { display: none !important; }
+  body.print-template-only[data-print-target="observation-template-mock"] #template,
+  body.print-template-only[data-print-target="single-focus-template-mock"] #single { display: block !important; }
+
+  body.print-template-only .template-mock { display: none !important; }
+  body.print-template-only[data-print-target="observation-template-mock"] #observation-template-mock,
+  body.print-template-only[data-print-target="single-focus-template-mock"] #single-focus-template-mock { display: block !important; }
+
   body.print-template-only { margin: 0 !important; padding: 0 !important; }
   body.print-template-only .container { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
   body.print-template-only .section { page-break-before: avoid !important; margin: 0 !important; padding: 0 !important; border: none !important; }
@@ -257,74 +265,77 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <h2 class="section-title">The Observation Template</h2>
   <p class="section-sub">Nine active capture fields, designed for a single A4 or A5 page (A5 is better for taking notes in a court setting). Each field forces generative processing — you summarise and transform, rather than transcribe. The template constrains attention within working memory limits while anchoring observations to doctrinal structures that transfer to exam performance.</p>
 
-  <div class="template-mock" data-label="Print-ready · A4 / A5 · Pen only">
+  <div class="template-mock" id="observation-template-mock" data-label="Print-ready · A4 / A5 · Pen only">
     <div class="tmpl-page">
       <div class="tmpl-header">
-        <div class="tmpl-field"><span class="lbl">Date:</span><span class="val"></span></div>
-        <div class="tmpl-field"><span class="lbl">Court:</span><span class="val"></span></div>
-        <div class="tmpl-field"><span class="lbl">Judge:</span><span class="val"></span></div>
-        <div class="tmpl-field"><span class="lbl">Matter:</span><span class="val"></span></div>
+        <div class="tmpl-field"><span class="lbl">Date:</span><span class="val" contenteditable="true"></span></div>
+        <div class="tmpl-field"><span class="lbl">Court:</span><span class="val" contenteditable="true"></span></div>
+        <div class="tmpl-field"><span class="lbl">Judge:</span><span class="val" contenteditable="true"></span></div>
+        <div class="tmpl-field"><span class="lbl">Matter:</span><span class="val" contenteditable="true"></span></div>
         <div style="display:flex; gap: 0.5rem;">
-          <div class="tmpl-field" style="flex:1;"><span class="lbl">Type:</span><span class="val"></span></div>
-          <div class="tmpl-field" style="flex:0.5;"><span class="lbl">Est:</span><span class="val"></span></div>
+          <div class="tmpl-field" style="flex:1;"><span class="lbl">Type:</span><span class="val" contenteditable="true"></span></div>
+          <div class="tmpl-field" style="flex:0.5;"><span class="lbl">Est:</span><span class="val" contenteditable="true"></span></div>
         </div>
       </div>
 
       <div class="tmpl-section">
-        <div class="tmpl-section-title">Issue & Test</div>
+        <div class="tmpl-section-title">Issue &amp; Test</div>
         <div class="tmpl-prompt">› Core legal question:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.3rem;">› Governing legal test (my wording):</div>
-        <div class="tmpl-line-strong"></div>
+        <div class="tmpl-line-strong" contenteditable="true"></div>
         <div class="tmpl-annotation">↑ Articulate the test in your own words. This trains exam performance directly.</div>
       </div>
 
       <div class="tmpl-section">
         <div class="tmpl-section-title">Argument Structure</div>
         <div class="tmpl-prompt">› Opening roadmap:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">› Authority hierarchy (HCA / FCA / statute / policy):</div>
-        <div class="tmpl-line-strong"></div>
+        <div class="tmpl-line-strong" contenteditable="true"></div>
         <div class="tmpl-annotation">↑ Not which case — which level of authority do they lead with?</div>
       </div>
 
       <div class="tmpl-section">
         <div class="tmpl-section-title">Judicial Intervention</div>
         <div class="tmpl-prompt">› Trigger:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">› Type (clarify / challenge / steer):</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">› Counsel recovery quality:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section">
-        <div class="tmpl-section-title">Persuasion & Application</div>
+        <div class="tmpl-section-title">Persuasion &amp; Application</div>
         <div class="tmpl-prompt">› Strongest application moment:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">› Weakest moment:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">› What shifted energy:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section" style="border-top: 1.5px solid #2c2926; margin-top: 0.8rem;">
         <div class="tmpl-section-title">Post-Hearing (3 min max — write immediately)</div>
         <div class="tmpl-prompt">1. One technique to copy:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
         <div class="tmpl-prompt" style="margin-top: 0.2rem;">2. One structural insight:</div>
-        <div class="tmpl-line"></div>
+        <div class="tmpl-line" contenteditable="true"></div>
       </div>
     </div>
+  </div>
+
+  <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+    <a href="observation-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
+    <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
+    <button onclick="printTemplate('observation-template-mock')" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
   </div>
 
   <div class="callout callout-amber">
     <div class="callout-label">How to Use</div>
     <p><strong>Fragments, not sentences.</strong> If you're writing full sentences during the hearing, you're transcribing. <strong>Leave white space.</strong> A page 60% full is better than 100% full. <strong>One page per hour maximum</strong> (a suggested guideline, not a research-backed rule). If you fill it faster, you're over-capturing. The template is a scaffold for attention, not a form to complete.</p>
   </div>
-
-  <a href="observation-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
-  <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
 
   <h3 style="font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 1.1rem; margin: 2rem 0 0.75rem;">Field Design Rationale</h3>
   
@@ -356,7 +367,7 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <h2 class="section-title">The Single-Focus Template</h2>
   <p class="section-sub">One pre-set question. Total observational depth on that question alone. This is the purest application of deliberate practice to court observation — a pre-set intention, focused execution, and structured debrief that compounds across visits.</p>
 
-  <div class="template-mock" data-label="Print-ready · A4 / A5 · Single question">
+  <div class="template-mock" id="single-focus-template-mock" data-label="Print-ready · A4 / A5 · Single question">
     <div class="tmpl-page" id="single-focus-template">
       <div class="tmpl-header">
         <div style="display:flex; gap: 0.5rem;">
@@ -400,13 +411,15 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
     <a href="single-focus-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
     <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
-    <button onclick="printTemplate()" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
+    <button onclick="printTemplate('single-focus-template-mock')" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
   </div>
 
   <script>
-    function printTemplate() {
+    function printTemplate(targetId) {
       document.body.classList.add('print-template-only');
+      document.body.setAttribute('data-print-target', targetId);
       window.print();
+      document.body.removeAttribute('data-print-target');
       document.body.classList.remove('print-template-only');
     }
   </script>
