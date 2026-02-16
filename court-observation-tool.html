@@ -157,11 +157,15 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 .pstep p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55; }
 
 /* Focus bank */
-.focus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+.focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin: 1rem 0; }
 .focus-card { background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 0.9rem; }
 .focus-card .focus-visit { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
 .focus-card h4 { font-size: 0.85rem; margin-bottom: 0.2rem; }
 .focus-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; }
+
+@media (max-width: 768px) {
+  .focus-grid { grid-template-columns: 1fr; }
+}
 
 /* References */
 .ref-list { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.85; }
