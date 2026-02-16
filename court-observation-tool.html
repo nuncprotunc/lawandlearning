@@ -176,7 +176,29 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 
 
 /* Print */
-@media print { .nav { display: none; } .section { display: block !important; page-break-before: always; } body { background: white; } .dl-btn { display: none; } }
+@media print { 
+  .nav { display: none; } 
+  .section { display: block !important; page-break-before: always; } 
+  body { background: white; } 
+  .dl-btn { display: none; }
+}
+
+/* Print template only */
+@media print {
+  body.print-template-only > *:not(.template-mock) { display: none !important; }
+  body.print-template-only #ll-header,
+  body.print-template-only #ll-footer,
+  body.print-template-only .nav,
+  body.print-template-only .section-title,
+  body.print-template-only .section-sub,
+  body.print-template-only .callout,
+  body.print-template-only .dl-btn,
+  body.print-template-only h2,
+  body.print-template-only h3,
+  body.print-template-only p:not(.tmpl-page p) { display: none !important; }
+  body.print-template-only .template-mock { margin: 0; padding: 0; border: none; box-shadow: none; background: transparent; }
+  body.print-template-only .container { padding: 0; max-width: 100%; }
+}
 
 /* Download button */
 .dl-btn {
@@ -365,8 +387,16 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
     <a href="single-focus-template.pdf" download class="dl-btn">↓ Download PDF (A4)</a>
     <a href="court-observation-templates.pdf" download class="dl-btn">↓ Both Templates (A4)</a>
-    <button onclick="window.print()" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
+    <button onclick="printTemplate()" class="dl-btn" style="cursor: pointer; border: none;">🖨️ Print/Save Filled Template</button>
   </div>
+
+  <script>
+    function printTemplate() {
+      document.body.classList.add('print-template-only');
+      window.print();
+      document.body.classList.remove('print-template-only');
+    }
+  </script>
 
   <div class="callout callout-blue" style="margin-top: 1.5rem;">
     <div class="callout-label">Theoretical Foundation</div>
