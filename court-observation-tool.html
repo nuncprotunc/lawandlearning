@@ -185,7 +185,6 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 
 /* Print template only */
 @media print {
-  body.print-template-only > *:not(.template-mock) { display: none !important; }
   body.print-template-only #ll-header,
   body.print-template-only #ll-footer,
   body.print-template-only .nav,
@@ -193,11 +192,15 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
   body.print-template-only .section-sub,
   body.print-template-only .callout,
   body.print-template-only .dl-btn,
+  body.print-template-only button,
   body.print-template-only h2,
   body.print-template-only h3,
-  body.print-template-only p:not(.tmpl-page p) { display: none !important; }
+  body.print-template-only .focus-grid,
+  body.print-template-only a[href] { display: none !important; }
   body.print-template-only .template-mock { margin: 0; padding: 0; border: none; box-shadow: none; background: transparent; }
+  body.print-template-only .template-mock::before { display: none; }
   body.print-template-only .container { padding: 0; max-width: 100%; }
+  body.print-template-only .section { display: block !important; }
 }
 
 /* Download button */
