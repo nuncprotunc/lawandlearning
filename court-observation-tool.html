@@ -185,14 +185,24 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 
 /* Print template only */
 @media print {
-  body.print-template-only * { display: none !important; }
-  body.print-template-only .template-mock,
-  body.print-template-only .template-mock *,
-  body.print-template-only .tmpl-page,
-  body.print-template-only .tmpl-page * { display: block !important; }
+  body.print-template-only #ll-header,
+  body.print-template-only #ll-footer,
+  body.print-template-only .nav,
+  body.print-template-only .section:not(#single),
+  body.print-template-only .section-title,
+  body.print-template-only .section-sub,
+  body.print-template-only .callout,
+  body.print-template-only .dl-btn,
+  body.print-template-only button,
+  body.print-template-only h2,
+  body.print-template-only h3,
+  body.print-template-only .focus-grid,
+  body.print-template-only a[href],
+  body.print-template-only p:not(.tmpl-page p),
+  body.print-template-only script { display: none !important; }
+  body.print-template-only .container { padding: 0 !important; max-width: 100% !important; }
   body.print-template-only .template-mock { margin: 0 !important; padding: 0 !important; border: none !important; box-shadow: none !important; background: transparent !important; }
   body.print-template-only .template-mock::before { display: none !important; }
-  body.print-template-only .tmpl-field { display: flex !important; }
 }
 
 /* Download button */
