@@ -141,6 +141,8 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 .tmpl-prompt { color: #888; font-style: italic; margin-bottom: 0.1rem; font-size: 0.68rem; }
 .tmpl-line { border-bottom: 1px dotted #ddd; min-height: 1.5em; outline: none; }
 .tmpl-line:focus { background: rgba(108,99,255,0.03); border-bottom-color: var(--accent); }
+.tmpl-textarea { min-height: 8em; outline: none; padding: 0.3rem 0; }
+.tmpl-textarea:focus { background: rgba(108,99,255,0.03); }
 .tmpl-line-strong { border-bottom: 1.5px solid rgba(108,99,255,0.2); min-height: 1.8em; background: rgba(108,99,255,0.04); outline: none; }
 .tmpl-line-strong:focus { background: rgba(108,99,255,0.08); border-bottom-color: var(--accent); }
 .tmpl-annotation { font-size: 0.6rem; color: var(--accent); font-style: italic; margin-top: 0.15rem; }
@@ -385,15 +387,13 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; backgr
 
       <div class="tmpl-section">
         <div class="tmpl-section-title">Observations (this lens only)</div>
-        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
-        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
-        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
+        <div class="tmpl-textarea" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section" style="border: 1px dashed #ddd; border-radius: 3px; padding: 0.5rem; margin-top: 0.5rem;">
         <div class="tmpl-section-title" style="color: #888;">Surprise / Exception</div>
         <div class="tmpl-prompt" style="font-size: 0.62rem;">Anything critical that fell outside your focus lens.</div>
-        <div class="tmpl-line" contenteditable="true"></div><div class="tmpl-line" contenteditable="true"></div>
+        <div class="tmpl-textarea" style="min-height: 3em;" contenteditable="true"></div>
       </div>
 
       <div class="tmpl-section" style="border-top: 1.5px solid #2c2926; margin-top: 0.6rem;">
