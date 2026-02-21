@@ -76,8 +76,11 @@
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: var(--lh-body);
+      letter-spacing: var(--ls-body);
+      word-spacing: var(--ws-body);
       font-size: 15px;
+      transition: line-height 0.3s ease, letter-spacing 0.3s ease, word-spacing 0.3s ease;
     }
 
     /* Main container */
