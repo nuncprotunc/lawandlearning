@@ -68,6 +68,13 @@ body.reading-relaxed {
   color: var(--ll-text);
 }
 
+ .ll-logo-area,
+ .ll-logo-area * {
+   line-height: 1.2 !important;
+   letter-spacing: normal !important;
+   word-spacing: normal !important;
+ }
+
 .ll-global-nav {
   display: flex;
   align-items: center;
