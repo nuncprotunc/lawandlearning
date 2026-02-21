@@ -7,6 +7,17 @@
   --ll-border: rgba(74, 144, 226, 0.15);
   --ll-bg: #ffffff;
   --ll-bg-alt: #f8fafc;
+  
+  /* Reading mode variables */
+  --lh-body: 1.6;
+  --ls-body: 0.01em;
+  --ws-body: 0.03em;
+}
+
+body.reading-relaxed {
+  --lh-body: 2.2;
+  --ls-body: 0.08em;
+  --ws-body: 0.12em;
 }
 
 .ll-site-header {
@@ -88,12 +99,56 @@
   border-bottom: 2px solid var(--ll-accent-blue);
 }
 
+/* Relaxed reading toggle button */
+.ll-reading-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ll-text-muted);
+  background: var(--ll-bg);
+  border: 1px solid var(--ll-border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.ll-reading-toggle:hover {
+  border-color: var(--ll-accent-blue);
+  color: var(--ll-accent-blue);
+  background: rgba(74, 144, 226, 0.05);
+}
+
+.ll-reading-toggle:focus-visible {
+  outline: 2px solid var(--ll-accent-blue);
+  outline-offset: 2px;
+}
+
+.ll-reading-toggle[aria-pressed="true"] {
+  background: rgba(74, 144, 226, 0.1);
+  border-color: var(--ll-accent-blue);
+  color: var(--ll-accent);
+}
+
+.ll-reading-toggle .toggle-icon {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .ll-mobile-menu-button {
   display: none;
 }
 
 @media (max-width: 720px) {
   .ll-global-nav { display: none !important; }
+  
+  .ll-reading-toggle {
+    display: none !important;
+  }
 
   .ll-mobile-menu-button {
     display: flex;

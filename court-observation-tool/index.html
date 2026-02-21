@@ -89,7 +89,7 @@
   --purple-border: rgba(108, 99, 255, 0.25);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #1a1a2e; line-height: var(--lh-body); letter-spacing: var(--ls-body); word-spacing: var(--ws-body); -webkit-font-smoothing: antialiased; transition: line-height 0.3s ease, letter-spacing 0.3s ease, word-spacing 0.3s ease; }
 ::selection { background: #6c63ff; color: #fff; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 

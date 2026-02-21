@@ -84,6 +84,16 @@ function llSetFooterSource() {
   if (sourceInput) sourceInput.value = source;
 }
 
+function llInitReadingToggle() {
+  const btn = document.getElementById('llReadingToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    const pressed = btn.getAttribute('aria-pressed') === 'true';
+    btn.setAttribute('aria-pressed', String(!pressed));
+    document.body.classList.toggle('reading-relaxed', !pressed);
+  });
+}
+
 async function llInitChrome() {
   await llInjectPartial('ll-header', '/partials/header.html');
   await llInjectPartial('ll-footer', '/partials/footer.html');
@@ -92,6 +102,7 @@ async function llInitChrome() {
   if (headerHost) {
     llSetActiveNavLinks(headerHost);
     llWireMobileMenu(headerHost);
+    llInitReadingToggle();
   }
 
   llSetFooterSource();
