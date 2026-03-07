@@ -149,6 +149,38 @@
       margin-bottom: 40px;
     }
 
+    .legal-site-nav {
+      max-width: 1100px;
+      margin: 0 auto 1.5rem;
+      padding: 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .legal-site-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.625rem 1rem;
+      border: 1px solid rgba(74, 144, 226, 0.18);
+      border-radius: 999px;
+      color: #475569;
+      background: #ffffff;
+      text-decoration: none;
+      font-size: 0.8125rem;
+      line-height: 1;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+
+    .legal-site-nav a:hover {
+      color: var(--ll-accent-blue);
+      border-color: rgba(74, 144, 226, 0.35);
+      background: rgba(74, 144, 226, 0.05);
+      text-decoration: none;
+    }
+
     .legal-body {
       max-width: 1100px;
       margin: 0 auto;
@@ -308,6 +340,12 @@
   <p class="legal-updated">Last updated: 22 February 2026</p>
 </div>
 
+<nav class="legal-site-nav" aria-label="Law &amp; Learning pages">
+  <a href="/">Home</a>
+  <a href="/court-observation-tool/">Court Observation Tool</a>
+  <a href="/gdpr-study-map/">GDPR Study Map</a>
+</nav>
+
 <main class="legal-body" aria-labelledby="legal-title">
 
   <div class="legal-card">
@@ -397,7 +435,7 @@
         Original third-party content remains the property of its respective rights holders.
       </p>
       <p>
-        Where materials are released under open licences (such as the <a href="https://doi.org/10.5281/zenodo.18659537" target=" target="_blank" rel="noopener"_blank" rel="noopener">Court Observation Tool</a> under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=" target="_blank" rel="noopener"_blank" rel="noopener">CC BY-NC-SA 4.0</a>), those licence terms apply. Code and other materials published on platforms such as <a href="https://docs.github.com/en/site-policy/privacy-policies" target=" target="_blank" rel="noopener"_blank" rel="noopener">GitHub</a> are governed by the licences stated in those repositories.
+        Where materials are released under open licences (such as the <a href="https://doi.org/10.5281/zenodo.18659537" target="_blank" rel="noopener">Court Observation Tool</a> under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>), those licence terms apply. Code and other materials published on platforms such as <a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank" rel="noopener">GitHub</a> are governed by the licences stated in those repositories.
       </p>
       <p>
         For permission to use content beyond the scope described above, contact <a href="mailto:hello@lawandlearning.com" target="_blank" rel="noopener">hello@lawandlearning.com</a>.
